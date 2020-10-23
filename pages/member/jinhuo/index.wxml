@@ -1,0 +1,58 @@
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+  <view class='page navbar {{isopen == 1?"header":""}}'>
+    <block wx:if='{{list.length > 0}}'>
+      <view class='fui-list-group'>
+        <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key="list">
+          <navigator url="/pages/member/supplier/xiangqing/index?orderid={{item.id}}" hover-class="none">
+            <view class='fui-list goods-item'>
+              <view class='fui-list-inner'>
+                <view class='title'>
+                  <view>订单号：{{item.ordersn}}</view>
+                  <view>总价格：{{item.price}}元</view>
+                </view>
+                <view class='text'>{{item.createtime}}</view>
+              </view>
+              <view class='fui-list-angle'>
+                <block wx:if='{{item.status == "-1"}}'>
+                  <text class='fui-label fui-label-default'>取消</text>
+                </block>
+                <block wx:if='{{item.status == "0"}}'>
+                  <text class='fui-label fui-label-default'>待付款</text>
+                </block>
+                <block wx:if='{{item.status == 1}}'>
+                  <text class='fui-label fui-label-success'>待发货</text>
+                </block>
+                <block wx:if='{{item.status ==  2}}'>
+                  <text class='fui-label fui-label-danger'>待收货</text>
+                </block>
+                <block wx:if='{{item.status == 3 }}'>
+                  <text class='fui-label fui-label-warning'>已收货</text>
+                </block>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+      <block wx:if='{{loading}}'>
+        <view class='fui-loading'>
+          <view class='icon'></view>
+          <view class='text'>正在加载</view>
+        </view>
+      </block>
+      <block wx:if='{{loaded && list.length > 0}}'>
+        <view class='fui-loading empty'>
+          <view class='text'>没有更多了</view>
+        </view>
+      </block>
+      <block wx:if='{{total <= 0 && !loading}}'>
+        <view class='fui-loading empty'>
+          <view class='text'>没有数据</view>
+        </view>
+      </block>
+      <include src='/pages/common/menu.wxml' />
+    </block>
+  </view>
+</block>

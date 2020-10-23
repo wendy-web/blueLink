@@ -1,0 +1,17 @@
+<!--pages/shouye/gratis_jie/order/successPay/successPay.wxml-->
+<view class="flex flex-cloumn flex-c font16" style="color:red;padding:60rpx 0;border-bottom:2rpx solid #ccc;margin: 0 20rpx">
+  <view style="width:120rpx;height:120rpx">
+    <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/paySuccess.png" style="width:100%;height:100%"></image>
+  </view>
+  <text style="padding:20rpx 0 0rpx 0">订单支付成功</text>
+  <text class="font30">￥28.3</text>
+</view>
+<view class="p10 font16" style="color:#888;overflow:hidden">
+  <text class="fl">支付方式</text>
+  <text class="fr">微信支付</text>
+</view>
+<view style="color:#fff;justify-content:space-between" class="p10 flex font16">
+  <view class="bg_red" style="padding:20rpx 50rpx;border-radius:10rpx">分享赚钱</view>
+  <view class="bg_red" style="padding:20rpx 50rpx;border-radius:10rpx">再来一单</view>
+  <view class="bg_red" style="padding:20rpx 50rpx;border-radius:10rpx">查询详情</view>
+</view>

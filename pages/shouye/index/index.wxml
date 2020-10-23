@@ -1,0 +1,222 @@
+<view class="hade_box flex flex-center-align ">
+  <navigator url="/pages/goods/index/index" class="hade_div flex flex-center-align">
+    <image class="hade_img" src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/fdj_ke.png"></image>
+    <input class="hade_input" type="text" placeholder="请输入你要购买的商品" value="{{searchValue}}" bindinput="searchHandle"></input>
+  </navigator>
+  <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/hong.png"></image>
+</view>
+<!-- 轮播图 --> 
+<view class="carousel_box">
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{advs}}" wx:for-item="item" wx:key="*this">
+      <swiper-item>
+        <navigator url="{{item.link}}" class="swiper-item"> <image class="carousel_img" src="{{item.thumb}}"></image></navigator>
+      </swiper-item>
+    </block> 
+  </swiper>
+</view>
+<!-- 列表 -->
+<view class="sort_ul flex flex-wrap" >
+  <block wx:for="{{sort_list}}" wx:key="sort_list" data-index="{{index}}" >
+    <block wx:if="{{index == 3}}">
+      <view class="sort_li flex flex-col flex-center-center" bindtap="qiandao">
+        <image class="sort_img" src="{{item.icon}}"></image>
+        <text class="sort_text">{{item.navname}}</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="sort_li flex flex-col flex-center-center" bindtap="sortlist" data-index="{{index}}" data-id="{{item.id}}">
+        <image class="sort_img" src="{{item.icon}}"></image>
+        <text class="sort_text">{{item.navname}}</text>
+      </view>
+    </block>
+  </block>
+</view>
+<!-- 大礼包 -->
+<!-- <navigator url='/pages/shouye/vipka/index' hover-class='none' class="poster_box" > -->
+<navigator url="/pages/goods/detail/index?id=1" hover-class='none' class="poster_box" >
+  <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/sort_img9.png"></image>
+</navigator>
+
+<!-- 限时限购 -->
+<view class="limited_box" style="background:url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/tou1.png); background-size: 100% 100%;">
+  <!-- <text class="limited_text">限时限购</text> -->
+  <view class="limited_ul flex">
+    <block wx:for="{{seckill_time}}" wx:key="index"  >
+      <view class="limited_li  flex flex-col {{timeId == item.id ? 'active' : ''}}"
+        bindtap="TimeSelectHandle"
+        data-id="{{item.id}}"
+      >
+      <!-- <navigator url='/pages/shouye/liebiao/index?seckill_id={{item.id}}'
+                hover-class="none"
+                class="limited_li  flex flex-col {{item.open_status ==1?'active':''}}"
+                data-index="{{index}}"
+      > -->
+        <text>{{item.hour}}:00</text>
+        <text >{{item.open_status==0?'已开抢':(item.open_status==1?'进行中':'待开始')}}</text>
+      <!-- </navigator> -->
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 限时商品 -->
+<view class="goods_ul flex flex-jcsb flex-wrap">
+  <block wx:for="{{seckill_goods}}" wx:for-item="item" wx:key="*this">
+    <view hover-class="none" class="goods_li" data-id="{{item.id}}" bindtap="timeDetailHandle">
+      <image class="goods_img" src="{{item.thumb}}"></image>
+      <view class="font_siz30 flex flex-jcsb">
+        <text>{{item.title}}</text>
+        <text>{{item.unit}}</text>
+      </view>
+      <view class="li_tow flex flex-jcsb flex-center-align">
+        <text wx:if="{{item.isdeduct}}==1">可参与抵扣：红包/VIP卡</text>
+        <text wx:else>不可参与抵扣：红包/VIP卡</text>
+        <!-- <view class="share_btn">分享赚钱</view> -->
+      </view>
+      <view class="flex flex-jcsb flex-center-align">
+        <view class="">
+          <p class="font_size36 color_red">￥{{item.marketprice}}</p>
+          <p class="font_siz25">原价{{item.productprice }}元</p>
+        </view>
+        <view>
+          <view class="share_btn">分享赚钱</view>
+          <view class="team_btn">去抢购</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 一起拼团 -->
+<view class="goods_ul flex flex-jcsb flex-wrap">
+  <view class="fruits_tile" style="background-image:url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/tou7.png);">
+  </view>
+  <block wx:for="{{group_goods}}" wx:for-item="item" wx:key="*this">
+    <view class="goods_li">
+    <navigator url="/pages/shouye/pintuan/pintuan?id={{item.id}}" hover-class="none">
+      <image class="goods_img" src="{{item.thumb}}"></image>
+      <view class="font_siz30 flex flex-jcsb">
+        <text>{{item.title}}</text>
+        <text>{{item.units}}</text>
+      </view>
+      <view class="li_tow flex flex-jcsb flex-center-align">
+        <text wx:if="{{item.isdeduct}}==1">可参与抵扣：红包/VIP卡</text>
+        <text wx:else>不可参与抵扣：红包/VIP卡</text>
+      </view>
+      <view class="flex flex-jcsb flex-center-align">
+        <view>
+          <p class="font_size36 color_red">￥{{item.groupsprice }}</p>
+          <p class="font_siz25">原价{{item.singleprice }}元</p>
+        </view>
+        <view>
+          <view class="share_btn">分享赚钱</view>
+          <view class="team_btn">我要拼团</view>
+        </view>
+      </view>
+      </navigator>
+    </view>
+  </block>
+</view>
+<!-- 满送 -->
+<view class="fruits_box flex flex-jcsb flex-wrap">
+  <view class="fruits_tile" style="background-image:url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/tou6.png);">
+  </view>
+  <block wx:for="{{goods}}" wx:for-item="item" wx:key="*this">
+    <view class="fruits_li">
+      <navigator url="/pages/goods/detail/index?id={{item.id}}" hover-class="none">
+      <image class="fruits_img" src="{{item.thumb}}"></image>
+      <view class="font_siz30 flex flex-jcsb">
+        <text>{{item.title}}</text>
+        <text>{{item.unit}}</text>
+      </view>
+      <view class="li_tow flex flex-jcsb flex-center-align">
+        <text wx:if="{{item.isdeduct}}==1">可参与抵扣：红包/VIP卡</text>
+        <text wx:else>不可参与抵扣：红包/VIP卡</text>
+      </view>
+      <view class="flex flex-jcsb flex-center-align">
+        <view>
+          <p class="font_size36 color_red">￥{{item.marketprice }}</p>
+          <p class="font_siz25">原价{{item.productprice }}元</p>
+        </view>
+        <view>
+          <view catchtap='showShare' class="share_btn">分享赚钱</view>
+          <view class="team_btn">我要拼团</view>
+        </view>
+      </view>
+      </navigator>
+    </view>
+  </block>
+</view>
+<view class="til_box flex flex-col">
+  <text>团优优.健康消费平台</text>
+  <text>我们承诺：如果您购买的水果出现坏果烂果，平台根据情况进行退款换果</text>
+  <view class="service"><text>我们客服热线：020-888888888</text><text>微信客服：13333333</text></view>
+</view>
+<!--cc_zhong 分享层-->
+<block wx:if='{{showshare == 1}}'>
+  <view class='fui-modal picker-modal {{slider}}'>
+    <view class='option-picker'>
+      <view class='option-picker-inner'>
+        <view class='option-picker-cell'>
+
+          <view class='fui-cell-group1'>
+            <view class='fui-cell'>
+              <button open-type='share' class='fui-cell-info' style="text-align:center;padding:10px;background:#ffffff;margin:0;border:0px solid #ffffff">
+                <view class='icon'>
+                  <image src='/static/images/wechat.png' style="width:60px;height:60px" lazy-load='true'></image>
+                </view>
+                <view class='label'>分享给朋友</view>
+              </button>
+              <!-- <navigator class='fui-cell-info' style="text-align:center;padding:10px" url='/pages/goods/poster/index?id={{options.id}}'>
+                <view class='icon icon-shop'>
+                  <image src='https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/gposter.png' style="width:60px;height:60px" lazy-load='true'></image>
+                </view>
+                <view class='label'>生成商品海报</view>
+              </navigator> -->
+            </view>
+          </view>
+        </view>
+        <view class='fui-navbar'>
+          <block>
+            <a href='javascript:;' bindtap='emptyActive' class='nav-item btn confirmbtn disabled' style="color:#666666">关 闭</a>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<!-- 签到弹出层 -->
+<block wx:if='{{showqiandao == 1}}'>
+  <view class="sq_bg">
+    <view class="sq_white flex flex-col">
+      <text class="sq_text">您今日的红包还未领取</text>
+      <text>签到后即可领取</text>
+      <view class="sq_hong" style="background:url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/qiandaohong.png);background-size:100% 100%;">
+        <text class="sq_yuan">{{reward}}元</text>
+      </view>
+      <button style="background:#E41436;color:#ffffff;" bindtap="successbtn">立即签到领取</button>
+      <button style="border:2rpx solid #E41436;color:#E41436;" bindtap="removebtn">放弃并离开</button>
+    </view>
+  </view> 
+</block>
+<view class="redBagBg" wx:if='{{credit1_list.length > 0 && credit1_list_Index < credit1_list.length}}'>
+  <!-- 新人红包 -->
+  <view class="newPersoanl"  wx:if="{{credit1_list_Fist.type == 5}}" style="background:url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/newPersonal.png);background-size:100% 100%;">
+    <image src='https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/newPersonal01.png' class="newPer_topImg" mode="widthFix"></image>
+    <view class="newPer_RedImg">
+      <image src='https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/newPersonal02.png' mode="widthFix"></image>
+      <p class="redBagNum">{{credit1_list_Fist.num}}元红包</p>
+      <p class="openBtn" catchtap="openRedHandle" data-id="{{credit1_list_Fist.id}}" ></p>
+    </view>
+  </view>
+  <!-- 拼团 --> 
+  <view class="openRedBox" wx:else style="background:url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/openRedBagSmall.png);background-size:100% 100%;">
+    <view class="redBagText">
+      <p class="redBagPrice" wx:if="{{credit1_list_Fist.type == 2 || credit1_list_Fist.type == 3}}">分享获得</p>
+      <p class="redBagPrice">{{credit1_list_Fist.num}}元红包</p>
+      <p wx:if="{{credit1_list_Fist.type == 1}}">恭喜你拼团获得</p>
+      <p wx:if="{{credit1_list_Fist.type == 4}}">你消费获得红包</p>
+    </view> 
+    <image src='https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/receiveBtn.png' mode="widthFix" data-id="{{credit1_list_Fist.id}}" catchtap="openRedHandle"></image>
+  </view>
+</view>

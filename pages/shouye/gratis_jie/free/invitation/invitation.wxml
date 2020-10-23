@@ -1,0 +1,65 @@
+<view class="flex flex-c flex-cloumn font16" style="color:red;padding-top:40rpx">
+  <view style="width:120rpx;height:120rpx">
+    <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/paySuccess.png" style="width:100%;height:100%"></image>
+  </view>
+  <view class="font14" style="margin: 10rpx 0">订单支付成功</view>
+  <view class="font22">￥{{price}}</view>
+</view>
+<view class="flex flex-c" style="margin-top:80rpx;">
+  <view class="flex flex-c" style="width:160rpx;height:160rpx;position: relative">
+    <view class="flex flex-c" style="width:100rpx;height:100rpx;border:2rpx dashed rgb(248,172,53);border-radius:100%">
+      <image style="border-radius:100%" src="{{info.master.avatar}}"></image>
+      <!-- <text>?</text> -->
+    </view>
+    <text class="font14 flex flex-c" style="background: rgb(248,172,53);position:absolute;top:16rpx;left:18rpx;border-radius:20rpx;border:2rpx silde #fff;padding:0 8rpx;color:rgb(170,117,8)">拼主</text>
+  </view>
+  <view wx:for="{{info.invite_logs}}" wx:key="{{index}}" class="flex flex-c" style="width:160rpx;height:160rpx;position: relative">
+    <view class="flex flex-c" style="width:100rpx;height:100rpx;border:2rpx dashed rgb(248,172,53);border-radius:100%">
+      <image style="border-radius:100%" src="{{item.avatar}}"></image>
+      <!-- <text>?</text> -->
+    </view>
+  </view>
+  <view wx:for="{{info.surplus}}" wx:key="{{index}}" class="flex flex-c" style="width:160rpx;height:160rpx;position: relative">
+    <view class="flex flex-c" style="width:100rpx;height:100rpx;border:2rpx dashed red;border-radius:100%">
+      <!-- <image src=""></image> -->
+      <text>?</text>
+    </view>
+  </view>
+</view>
+<view class="font22 text-c" style="color:#333">
+  还差{{info.surplus}}人，赶快请好友来免单吧
+</view>
+<view class="font16" style="width:80%;height:80rpx;line-height:80rpx;text-align:center;background:rgb(200,42,33);color:#fff;margin:60rpx auto 0;border-radius:12rpx" bindtap="showBuyModal">邀请好友免单</view>
+
+
+
+
+<!-- 点击邀请好友拼单 弹出遮罩层 -->
+<view class="cover_screen" bindtap="hideBuyModal" wx:if="{{showModalStatus}}"></view>
+
+<!-- 弹窗 -->
+<view animation="{{animationData}}" class="buy_box" wx:if="{{showModalStatus}}">
+    <!-- <view class="font16 flex flex-c" style="padding:40rpx 0">
+      <text>人满立即</text><text style="color:red">全额</text><text>免单</text>
+    </view> -->
+    <!-- <view style="color:#888;width:80%;text-align:center;padding:16rpx 40rpx;font-size:24rpx;border:2rpx dashed #999;margin: 0 auto">邀请1人下单助力,即可全额免单,限小程序新用户哦</view> -->
+    <view style="height:500rpx" class="">
+      <view style="height:420rpx" class="flex">
+        <button class="flex flex-c flex-cloumn" open-type="share">
+          <view style="width:160rpx;height:160rpx">
+            <image style="width:100%;height:100%" src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/wechat.png"></image>
+          </view>
+          <text style="margin-top:10rpx;color:#333" class="font16">分享好友</text>
+        </button>
+        <!-- <view style="flex:1" class="flex flex-c flex-cloumn">
+          <view style="width:160rpx;height:160rpx">
+            <image style="width:100%;height:100%" src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/wxMoments.png"></image>
+          </view>
+          <text style="margin-top:10rpx;color:#333" class="font16">分享朋友圈</text>
+        </view> -->
+      </view>
+      <view style="height:80rpx" class="flex flex-c">
+        <text class="font16" style="#333" bindtap="hideBuyModal">取消</text>
+      </view>
+    </view>
+</view>

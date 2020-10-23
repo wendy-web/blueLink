@@ -1,0 +1,149 @@
+page{
+  background-color: #eff1f6;
+  word-break: break-all;
+	font-size:28rpx;
+}
+.page{
+    background-color: #ffffff;
+}
+.su_container{
+  width: 100%;
+
+}
+.su_tab{
+  margin-top: 20rpx;
+}
+.su_tab>.item{
+  border: 2rpx solid #F00001;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  margin-right: 10rpx;
+
+}
+.item_left{
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+}
+.item_right{
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}
+.active{
+  background: #F00001;
+  color: #FFFC11;
+}
+.su_center{
+  width: 70%;
+  margin: 20rpx auto;
+}
+.active_on{
+  background: #FF808B;
+}
+.oy_center_guangjun{
+  padding: 10rpx 10rpx;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+  overflow-y:scroll ;
+  width: 100%;
+
+}
+.oy_center_guangjun>view{
+  width: auto;
+  margin-right: 30rpx;
+  display: block;
+  white-space: nowrap;
+  text-align: center;
+  flex-grow:0;
+  flex-shrink:0;
+}
+.on_active{
+  color: #F00001;
+  border-bottom: 2rpx solid #F00001;
+}
+/* 排行榜 */
+.oy_center_beijing{
+  height: 1900rpx;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.oy_center_paihang{
+  position: absolute;
+  top: 23%;
+  padding: 10rpx 10rpx;
+  box-sizing: border-box;
+  width: 100%;
+
+}
+.oy_center_item{
+  background: #ffffff;
+  width: 33%;
+  border-radius: 10rpx;
+  color: #F12E32;
+}
+.oy_center_item>image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-top: 30rpx;
+}
+.oy_center_name{
+  margin-top: 10rpx;
+}
+.oy_center_yingye{
+  font-size: 20rpx;
+}
+.oy_center_paiming{
+  background: #CE4241;
+  width: 100%;
+  text-align: center;
+  margin: 30rpx 0;
+  color: #ffffff;
+}
+.oy_center_neirong{
+  position: absolute;
+  top: 42%;
+  background: #ffffff;
+  width: 95%;
+  margin: 0 auto;
+  left: 2.5%;
+}
+.oy_center_tuanzhang{
+  width: 50%;
+  background: #FA6F1D;
+  color: #ffffff;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  position: relative;
+  left: 25%;
+  top: -25rpx;
+  border-radius: 10rpx;
+}
+
+.oy_center_top{
+  background: #F12E32;
+  color: #ffffff;
+  font-size: 24rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.oy_center_topitem{
+  height: 75rpx;
+  line-height: 75rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.oy_center_nickname{
+  width: 120rpx;
+  overflow: hidden;
+
+}
+.oy_center_num{
+  color: #F00001;
+
+}
+
+

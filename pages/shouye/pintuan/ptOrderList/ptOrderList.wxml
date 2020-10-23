@@ -1,0 +1,28 @@
+<!--pages/shouye/pintuan/ptOrderList/ptOrderList.wxml-->
+<view class="font16 flex" style="border-bottom:2rpx solid red">
+  <view data-index="0" bindtap="tab" style="flex:1;padding: 20rpx 0" class="{{index==0? 'flex flex-c active' : 'flex flex-c'}}">进行中</view>
+  <view data-index="1" bindtap="tab" style="flex:1;padding: 20rpx 0" class="{{index==1? 'flex flex-c active' : 'flex flex-c'}}">成功</view>
+  <view data-index="-1" bindtap="tab" style="flex:1;padding: 20rpx 0" class="{{index==-1? 'flex flex-c active' : 'flex flex-c'}}">失败</view>
+  <view data-index="-2" bindtap="tab" style="flex:1;padding: 20rpx 0" class="{{index==-2? 'flex flex-c active' : 'flex flex-c'}}">单买</view>
+</view>
+<view bindtap="gotoOrder" data-orderid="{{item.id}}" data-teamid="{{item.teamid}}" class="p10 font16" style="border-bottom:2rpx dashed red" wx:for="{{list}}" wx:key="{{index}}">
+  <view class="flex" style="margin-top:10rpx;">
+    <!-- 图片 -->
+    <image src="{{item.thumb}}" style="width;120rpx;heigth:120rpx;border:2rpx solid red;margin-right:20rpx"></image>
+    <view style="flex:1" class="flex flex-column flex-jcsb">
+      <view style="width:100%">订单编号：<text style="color:#888">{{item.orderno}}</text></view>
+      <view class="flex w100 flex-jcsb" style="flex:1">
+        <text>{{item.title}}</text>
+        <text>￥ {{item.price}}</text>
+      </view>
+      <view class="flex w100 flex-jcsb" style="flex:1">
+        <!-- <text class="font14" style="color:#888">文字描述</text> -->
+        <text>X 2</text>
+      </view>
+    </view>
+  </view>
+  <view class="flex flex-jcsb">
+    <view style="color:#888">{{item.statusData}}</view>
+    <view class="font18" style="color:red">实付:￥{{item.realprice}}</view>
+  </view>
+</view>

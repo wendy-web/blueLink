@@ -1,0 +1,70 @@
+/* pages/shouye/pintuan/alone_order/alone_order.wxss */
+.w100{
+  width: 100%;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.flex{
+  display: flex;
+}
+.flex-column{
+  flex-direction: column;
+}
+.flex-c{
+  justify-content: center;
+  align-items: center;
+}
+.flex-jcfs{
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex-jcsb{
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-jcfe{
+  justify-content: flex-end;
+  align-items: center;
+}
+.flex-warp{
+  flex-wrap: wrap;
+}
+.text-c{
+  text-align: center
+}
+.p10{
+  padding: 20rpx;
+}
+.bg_red{
+  background: red;
+}
+.textOver{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.font12{
+  font-size: 24rpx
+}
+.font14{
+  font-size: 28rpx;
+}
+.font16{
+  font-size: 32rpx;
+}
+.font18{
+  font-size: 36rpx;
+}
+.font20{
+  font-size: 40rpx;
+}
+.font22{
+  font-size: 44rpx;
+}
+.font30{
+  font-size: 60rpx;
+}

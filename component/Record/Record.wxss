@@ -1,0 +1,17 @@
+/* component/Record/Record.wxss */
+.w100{
+  width: 100%;
+}
+.flex{
+  display: flex;
+}
+.flex-cloumn{
+  flex-direction: column;
+}
+.flex-c{
+  justify-content: center;
+  align-items: center;
+}
+.text-c{
+  text-align: center
+}

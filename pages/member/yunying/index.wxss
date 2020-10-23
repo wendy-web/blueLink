@@ -1,0 +1,138 @@
+page{
+  background-color: #eff1f6;
+  word-break: break-all;
+	font-size:28rpx;
+}
+.page{
+    background-color: #ffffff;
+}
+.su_container{
+  width: 100%;
+
+}
+.su_tab>.item{
+  border: 2rpx solid #F00001;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  margin-right: 10rpx;
+}
+.item_left{
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+}
+.item_right{
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}
+.su_center{
+  width: 70%;
+  margin: 20rpx auto;
+}
+.oy_form_list{
+    height:60rpx;
+    /* padding:0 40rpx; */
+    border: 2rpx solid #eee;
+    margin-bottom: 30rpx;
+    white-space: nowrap;
+    background: #F2F2F2;
+    border-radius: 10rpx; 
+}
+.oy_form_pointer{
+    color:#ff5233;
+    font-size: 38rpx;
+    margin-right:8rpx;
+}
+.oy_form_title{
+    color:#000;
+    font-size: 30rpx;
+    width:190rpx;
+    height:90rpx;
+}
+.oy_form_right{
+    height:90rpx;
+}
+.oy_form_input{
+    width: 100%;
+    height:100%;
+    font-size:30rpx;
+    color:#000;
+}
+.section{
+  height: 200rpx;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.section textarea{
+  border: 2rpx solid #eee;
+  height: 200rpx;
+  width: 100%;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.oy_from_upload{
+  height: 60rpx;
+  margin-bottom: 30rpx;
+  white-space: nowrap;
+
+}
+.oy_form_img>image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 10rpx;
+  
+}
+.oy_from_btn{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #ffffff;
+  background: #F00001;
+  border-radius: 10rpx;
+  margin-top: 100rpx;
+}
+.oy_from_btn_success{
+  background: darkgray;
+}
+.active{
+  background: #F00001;
+  color: #FFFC11;
+}
+.oy_form_image{
+  width: 100%;
+  height: 100%;
+}
+.oy_form_image>image{
+  width: 100%;
+  height: 500rpx;
+}
+
+/* 详情地址 */
+.weui-cell__hd {
+    position: relative;
+    font-size: 28rpx;
+    text-align: left;
+}
+
+.weui-pos {
+    width: 40rpx;
+    height: 50rpx;
+    background: url(https://mall.shiziyu888.com/dan/Common/image/order_checkout_icon.png) no-repeat;
+    background-position: 0rpx 0;
+    background-size: 132rpx 142rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<!--pages/shouye/pintuan/ptOrder/ptOrder.wxml-->
+<!-- 选择地址 -->
+<Address bind:pickUpPoint="pickUpPoint" 
+         bind:address = "address" 
+         address="{{address}}" 
+         pickAddress="{{pickAddress}}"
+         express_class="{{express_class}}"
+         pick_class="{{pick_class}}"></Address>
+
+<!-- 商品订单详情 -->
+<ShopOrder isCart="{{false}}" orderInfo="{{allInfo}}" isGroup="{{true}}"></ShopOrder>
+ 
+<!-- 订单备注 -->
+<Remarks></Remarks>
+
+<!-- 支付金额信息 -->
+<MoneyInfo money="{{allInfo.price}}" freight="{{allInfo.goods.freight}}"></MoneyInfo>
+
+<!-- 配送方式开始 -->
+<view class="p10 font16" style="border-top:2rpx solid #ccc;padding-bottom:375rpx;color:#888">
+  <view class="flex" style="justify-content:space-between">
+    <text>配送方式</text>
+    <view>
+      <text wx:if="{{express_class}}">快递配送</text>
+      <text wx:if="{{pick_class}}">提货点自提</text>
+    </view>
+  </view>
+  <view class="" style="padding:20rpx 0;color:#000">
+    <view>选择抵扣红包方式</view>
+    <view class="flex" style="justify-content:space-between;padding-top:20rpx;">
+      <radio-group class="w100 flex flex-jcsb" bindchange="radioChange">
+          <radio data-price="{{allPrice}}" data-id="{{item.id}}" bindtap="check" class="radio" wx:for="{{deduction}}" wx:key="{{index}}" checked='{{item.checked}}'>
+            <text class="font14">{{item.title}}{{item.price}}</text>
+          </radio>
+      </radio-group>
+    </view>
+  </view>
+</view>
+
+<!-- 配送方式结束 -->
+
+
+<!-- 底部 -->
+<view class="navBar flex flex-cloumn" style="z-index:2">
+  <view wx:for="{{payType}}" wx:key="{{index}}" class="flex" style="background:#fff;flex:1;border-top:2rpx solid #ccc;">
+    <view style="flex:2;align-items:center;padding-left:30rpx" class="flex">
+      <view style="width:60rpx;height:60rpx">
+        <image src="{{item.imgSrc}}" style="width:100%;height:100%"></image>
+      </view>
+      <text class="font16" style="margin-left:20rpx">{{item.name}}</text>
+    </view>
+    <view style="flex:1;align-items:center" class="flex">
+      <checkbox-group data-index="{{index}}" bindchange="checkboxChange">
+        <checkbox value="" checked="{{item.checked}}" disabled=""/>
+      </checkbox-group>
+    </view>
+  </view>
+  <view class="flex" style="background:#fff;flex:1">
+    <view style="flex:2;border-top:2rpx solid #ccc;align-items:center;justify-content:space-around" class="flex font16">
+        <text style="color:#888">合计:￥{{allPrice}}</text> <text style="color:red">实付款:￥{{endPrice}} 免运费</text>
+    </view>
+    <view style="flex:1; color:#fff" class="bg_red flex flex-c flex-cloumn" bindtap="gotoPay">
+        <view>立即支付</view>
+    </view>
+  </view>
+</view>

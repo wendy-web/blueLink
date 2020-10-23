@@ -1,0 +1,69 @@
+.vk_center_bg{
+  height: 1500rpx;
+  width: 100%;
+  background-size: 100% 100%;
+  position: relative;
+  font-size: 30rpx;
+}
+.vk_center_vip{
+  position: absolute;
+  top: 26%;
+  width: 85%;
+  left: 7%;
+  text-align: center;
+  color: #FF0000;
+
+}
+.vk_kaitong{
+  background-image: linear-gradient(to bottom, #FF6900 , #FFF300,#FF7E00);
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  width: 90%;
+  color: #000000;
+}
+.vk_time{
+  font-size: 26rpx;
+}
+.vk_red{
+  color: #FF0000;
+}
+.vk_center_viptxt{
+  position: absolute;
+  top: 36.5%;
+  left: 35%;
+  color: #fff;
+}
+.vk_center_shuoming{
+  position: absolute;
+  top: 46%;
+  width: 85%;
+  left: 7%;
+  text-align: center;
+  color: #FF0000;
+}
+.vk_center_max{
+  font-size: 50rpx;
+  margin-bottom: 20rpx;
+}
+.vk_center_min{
+  font-size: 35rpx;
+  margin-bottom: 20rpx;
+}
+.vk_center_tu{
+  width: 80%;
+  margin:10rpx auto;
+  height: 200rpx;
+  background: #FF0000;
+}
+.vk_center_btn{
+  width: 50%;
+  background-image: linear-gradient(to bottom, #FF6900 , #FFF300,#FF7E00);
+  margin: 20rpx auto;
+  border-radius: 10rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+
+}
+
+
+

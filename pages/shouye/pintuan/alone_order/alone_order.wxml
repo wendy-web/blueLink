@@ -1,0 +1,103 @@
+<!--pages/shouye/pintuan/alone_order/alone_order.wxml-->
+<!-- <text>pages/shouye/pintuan/alone_order/alone_order.wxml</text> -->
+<view class="bg_red flex " style="color:#fff;padding:40rpx 20rpx 60rpx">
+  <view style="flex:2">
+    <view class="font18">单独购买成功</view>
+    <view class="font16">{{status}}</view>
+  </view>
+  <view style="flex:1">
+    <view style="width:140rpx;height:90rpx">
+      <image style="width:100%;height:100%" src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/time.png"></image>
+    </view>
+  </view>
+</view>
+<view class="p10 flex font14">
+  <view wx:if="{{info.order.pick_type=='1'}}" style="width:80%;font-weight:600">
+    <view>收货人： {{info.address.realname}}  {{info.address.mobile}}</view>
+    <view>收货地址： {{info.address.province}}{{info.address.city}}{{info.address.area}}{{info.address.address}}</view>
+  </view>
+  <view wx:if="{{info.order.pick_type=='2'}}" style="width:80%;font-weight:600">
+    <view>提货地址： {{info.address.province}}{{info.address.city}}{{info.address.area}}{{info.address.address}}</view>
+  </view>
+</view>
+<view class="p10">
+  <view class="font16" style="margin-bottom:16rpx">商品订单详情</view>
+  <view class="flex">
+    <image src="{{info.good.thumb}}" style="width:160rpx;height:160rpx;border:2rpx solid red"></image>
+    <view class="flex flex-column" style="flex:2; margin-left:10rpx;">
+      <view class="text-hide">{{info.good.title}}</view>
+      <view class="font14 text-hide" style="color:#888;margin-top:20rpx">{{info.good.description}}</view>
+    </view>
+    <view style="flex:1;color:#888;text-align:right" class="font16">
+      <view>￥{{info.order.price}}</view>
+      <view style="margin-top:20rpx">X {{info.order.groupnum}}</view>
+    </view>
+  </view>
+  <!-- <view class="flex flex-jcfe p10">
+    <view class="font14" style="padding:8rpx 16rpx;border:2rpx solid #ccc">申请售后</view>
+  </view> -->
+  <view style="margin-top:20rpx;text-align:right;color:#888" class="font16 flex flex-jcsb">
+    <view>商品金额</view>
+    <view><text style="" class="font18">￥{{info.order.realprice}}</text></view>
+    <!-- <text wx:if="{{info.myorder.freight!='0.00'}}" style="margin-left:10rpx;color:#888" > 运费：{{info.myorder.freight}}</text>
+    <text wx:else style="margin-left:10rpx;color:#888" >(免运费)</text> -->
+  </view>
+  <view wx:if="{{info.order.pick_type=='1'}}" style="margin-top:10rpx;text-align:right;" class="font16 flex flex-jcsb">
+    <view style="color:#888">运费</view>
+    <view style="color:#888">￥ {{info.order.freight}}<text wx:if="{{info.myorder.freight=='0.00'}}" style=""> 免运费</text></view>
+  </view>
+  <view style="margin-top:10rpx;text-align:right;" class="font16">
+    合计：<text class="font22" style="color:red">￥{{allPrice}}</text>
+  </view>
+
+  <view class="flex flex-jcsb">
+    <view class="flex flex-jcfe" style="margin-top:20rpx">
+      <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/shopInfo/kf.png" style="width:50rpx;height:50rpx;"></image>
+      <button open-type="contact" bindcontact="handleContact" class="font14" style="margin:0">联系商家</button>
+    </view>
+    <view class="flex flex-jcfe" style="margin-top:20rpx">
+      <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/shopInfo/kf.png" style="width:50rpx;height:50rpx;"></image>
+      <button open-type="contact" bindcontact="handleContact" class="font14" style="margin:0">拨打电话</button>
+    </view>
+  </view>
+
+  <view class="flex flex-jcsb font16" style="color:#888;margin-top:30rpx">
+    <text>配送方式</text>
+    <text wx:if="{{info.order.pick_type == 1}}">快递配送</text>
+    <text wx:else>自行提货</text>
+  </view>
+
+
+  <view class="font14" style="color:#888;margin-top:80rpx">
+    <view class="flex flex-jcsb">
+      <view>订单编号： {{info.order.orderno}}</view>
+      <view bindtap="copyBtn" class="font14" style="color:red;border:2rpx solid #888;padding:0 8rpx;border-radius:8rpx">复制</view>
+    </view>
+    <view class="flex flex-jcsb" style="margin-top:10rpx">
+      <view wx:if="{{info.order.pay_type == 'credit'}}">支付方式： 余额支付</view>
+      <view wx:else>支付方式： 微信支付</view>
+      <!-- <view class="font14" style="color:red;border:2rpx solid #888;padding:0 8rpx">复制</view> -->
+    </view>
+    <!-- <view class="flex flex-jcsb" style="margin-top:10rpx">
+      <view>商品快照： 核对交易细节时，可作为判断依据</view>
+      <view class="font14" style="color:red;border:2rpx solid #888;padding:0 8rpx;border-radius:8rpx">查看</view>
+    </view> -->
+    <view class="flex flex-jcsb" style="margin-top:10rpx">
+      <view>下单时间： {{info.order.createtime}}</view>
+      <!-- <view class="font14" style="color:red;border:2rpx solid #888;padding:0 8rpx">复制</view> -->
+    </view>
+  </view>
+
+
+
+  <view class="" style="margin:60rpx 0 100rpx;overflow:hidden;text-align:center">
+    <view bindtap="refund" class="font14" style="float:right;width:20%;border-radius:8rpx;padding:6rpx 10rpx;border:2rpx solid #ccc;margin-right:10rpx">申请退款</view>
+    <button open-type="share" class="font14" style="float:right;width:20%;border-radius:8rpx;padding:6rpx 10rpx;border:2rpx solid #ccc;margin-right:10rpx;line-height:1.3">立即分享</button>
+    <view class="font14" style="float:right;width:20%;border-radius:8rpx;padding:6rpx 10rpx;border:2rpx solid #ccc;margin-right:10rpx" wx:if="{{logistics == true}}" bindtap="express">查看物流</view>
+    <view class="font14" style="float:right;width:20%;border-radius:8rpx;padding:6rpx 10rpx;border:2rpx solid #ccc;margin-right:10rpx" wx:if="{{urge == true}}" bindtap="urge">催发货</view>
+    <view class="font14 bg_red" style="float:right;width:20%;border-radius:8rpx;padding:6rpx 10rpx;border:2rpx solid #ccc;color:#fff" bindtap="again">再次购买</view>
+  </view>
+</view>
+
+
+

@@ -1,0 +1,29 @@
+/* component/SuccessPay/SuccessPay.wxss */
+.w100{
+  width: 100%;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.flex{
+  display: flex;
+}
+.flex-cloumn{
+  flex-direction: column;
+}
+.flex-c{
+  justify-content: center;
+  align-items: center;
+}
+.text-c{
+  text-align: center
+}
+.p10{
+  padding: 20rpx;
+}
+.bg_red{
+  background: red;
+}

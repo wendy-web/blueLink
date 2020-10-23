@@ -1,0 +1,32 @@
+<!--component/PayNav/PayNav.wxml-->
+<!-- 拼团商品页底部Pay组件 -->
+
+<view class="payNav flex" style="background:#fff">
+  <button style="flex:1;border-top:2rpx solid rgb(175,175,175);border-right:2rpx solid rgb(175,175,175);padding:0;border-radius:0;line-height: 1.5" 
+          class="flex flex-c flex-cloumn"
+          open-type="share">
+    <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/shopInfo/fx.png" style="width:50rpx;height:50rpx;margin-top:4rpx"></image>
+    <text style="font-size:20rpx;color:#888;margin-top:10rpx">分享</text>
+  </button>
+  <view style="flex:1;border-top:2rpx solid rgb(175,175,175);border-right:2rpx solid rgb(175,175,175)" 
+        class="flex flex-c flex-cloumn"
+        bindtap="collection">
+    <image wx:if="{{isfavorite=='1'}}" src="/static/images/icon-red/like.png" style="width:50rpx;height:50rpx;"></image>
+    <image wx:else src="/static/images/icon/like_fill.png" style="width:50rpx;height:50rpx;"></image>
+    <text style="font-size:20rpx;color:#888;margin-top:10rpx">收藏</text>
+  </view>
+  <button style="flex:1;border-top:2rpx solid rgb(175,175,175);padding:0;border-radius:0;line-height: 1.5" 
+          class="flex flex-c flex-cloumn"
+          open-type="contact">
+    <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/shopInfo/kf.png" style="width:50rpx;height:50rpx;"></image>
+    <text style="font-size:20rpx;color:#888;margin-top:10rpx">客服</text>
+  </button>
+  <view style="flex:2;color:#fff;opacity: 0.6" class="font14 flex flex-cloumn flex-c bg_red" bindtap="onShowOption" data-type="{{1}}">
+    <text class="font22">￥{{singleprice}}</text>
+    <text>单独购买</text>
+  </view>
+  <view style="flex:3;color:#fff;" class="font14 flex flex-cloumn flex-c bg_red" bindtap="onShowOption" data-type="{{2}}">
+    <text class="font20">赚￥{{credit2_back }}元</text>
+    <text>发起拼团</text>
+  </view>
+</view>

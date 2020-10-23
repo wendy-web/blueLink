@@ -1,0 +1,177 @@
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+  <view class="hs_center_top flex flex-col flex-center ">
+    <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/tuandui.png"></image>
+    <text>我的团队</text>
+  </view>
+  <view class='page navbar com-down'>
+    <view class='fui-tab fui-tab-warning yy_center'>
+      <block >
+        <view bindtap='myTab' class='item {{level == "yiji"?"active":""}}' data-level='yiji'>一级成员</view>
+        <view bindtap='myTab' class='item {{level == "erji"?"active":""}}' data-level='erji'>二级成员</view>
+      </block>
+    </view>
+    <block wx:if="{{level == 'yiji'}}">
+      <view class="yy_center_list">
+        <view class="yy_center_item flex flex-center flex-jcsp">
+          <view>头像</view>
+          <view>ID号</view>
+          <view>级别</view>
+          <view>姓名</view>
+          <view>注册时间</view>
+        </view>
+        <view class="yy_center_tuandui">我的一级团队成员</view>
+        <view class="yy_center_itemlist flex flex-center flex-jcsp">
+          <view class="yy_center_img"><image src="../../img/oy_adr@2x.png"></image></view>
+          <view>789789</view>
+          <view>团长</view>
+          <view>吴**</view>
+          <view>2019.09.09 15：05</view>
+        </view>
+        <view class="yy_center_itemlist flex flex-center flex-jcsp">
+          <view class="yy_center_img"><image src="../../img/oy_adr@2x.png"></image></view>
+          <view>789789</view>
+          <view>团长</view>
+          <view>吴**</view>
+          <view>2019.09.09 15：05</view>
+        </view>
+        <view class="yy_center_itemlist flex flex-center flex-jcsp">
+          <view class="yy_center_img"><image src="../../img/oy_adr@2x.png"></image></view>
+          <view>789789</view>
+          <view>团长</view>
+          <view>吴**</view>
+          <view>2019.09.09 15：05</view>
+        </view>
+        <view class="yy_center_itemlist flex flex-center flex-jcsp">
+          <view class="yy_center_img"><image src="../../img/oy_adr@2x.png"></image></view>
+          <view>789789</view>
+          <view>团长</view>
+          <view>吴**</view>
+          <view>2019.09.09 15：05</view>
+        </view>
+        <view class="yy_center_itemlist flex flex-center flex-jcsp">
+          <view class="yy_center_img"><image src="../../img/oy_adr@2x.png"></image></view>
+          <view>789789</view>
+          <view>团长</view>
+          <view>吴**</view>
+          <view>2019.09.09 15：05</view>
+        </view>
+        <view class="yy_center_itemlist flex flex-center flex-jcsp">
+          <view class="yy_center_img"><image src="../../img/oy_adr@2x.png"></image></view>
+          <view>789789</view>
+          <view>团长</view>
+          <view>吴**</view>
+          <view>2019.09.09 15：05</view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{level == 'erji'}}">
+      <view class="yy_center_list">
+        <view class="yy_center_item flex flex-center flex-jcsp">
+          <view>头像</view>
+          <view>ID号</view>
+          <view>级别</view>
+          <view>姓名</view>
+          <view>注册时间</view>
+        </view>
+        <view class="yy_center_tuandui">我的二级团队成员</view>
+        <view class="yy_center_itemlist flex flex-center flex-jcsp">
+          <view class="yy_center_img"><image src="../../img/oy_adr@2x.png"></image></view>
+          <view>789789</view>
+          <view>团长</view>
+          <view>吴**</view>
+          <view>2019.09.09 15：05</view>
+        </view>
+        <view class="yy_center_itemlist flex flex-center flex-jcsp">
+          <view class="yy_center_img"><image src="../../img/oy_adr@2x.png"></image></view>
+          <view>789789</view>
+          <view>团长</view>
+          <view>吴**</view>
+          <view>2019.09.09 15：05</view>
+        </view>
+        <view class="yy_center_itemlist flex flex-center flex-jcsp">
+          <view class="yy_center_img"><image src="../../img/oy_adr@2x.png"></image></view>
+          <view>789789</view>
+          <view>团长</view>
+          <view>吴**</view>
+          <view>2019.09.09 15：05</view>
+        </view>
+        <view class="yy_center_itemlist flex flex-center flex-jcsp">
+          <view class="yy_center_img"><image src="../../img/oy_adr@2x.png"></image></view>
+          <view>789789</view>
+          <view>团长</view>
+          <view>吴**</view>
+          <view>2019.09.09 15：05</view>
+        </view>
+        <view class="yy_center_itemlist flex flex-center flex-jcsp">
+          <view class="yy_center_img"><image src="../../img/oy_adr@2x.png"></image></view>
+          <view>789789</view>
+          <view>团长</view>
+          <view>吴**</view>
+          <view>2019.09.09 15：05</view>
+        </view>
+        <view class="yy_center_itemlist flex flex-center flex-jcsp">
+          <view class="yy_center_img"><image src="../../img/oy_adr@2x.png"></image></view>
+          <view>789789</view>
+          <view>团长</view>
+          <view>吴**</view>
+          <view>2019.09.09 15：05</view>
+        </view>
+      </view>
+    </block>
+    <!-- <view class='fui-title'>成员信息
+      <image class='image-32' src='/static/images/icon-red/favor.png'>为已经成为分销商的下线</image>
+    </view>
+    <block wx:if='{{list.length > 0}}'>
+      <view class='fui-list-group'>
+        <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index'  wx:key="list">
+          <view class='fui-list'>
+            <view class='fui-list-media'>
+              <image src='{{item.avatar}}'></image>
+            </view>
+            <view class='fui-list-inner'>
+              <view class='row'>{{item.nickname || "未获取"}}
+                <block wx:if='{{item.isagent == 1 && item.status == 1}}'>
+                  <image class='image-32' src='/static/images/icon-red/favor.png'></image>
+                </block>
+              </view>
+              <block wx:if='{{item.isagent == 1 && item.status == 1}}'>
+                <view class='subtitle'>成为{{textagent}}时间: {{item.agenttime}}</view>
+              </block>
+              <block wx:else>
+                <view class='subtitle'>注册时间: {{item.createtime}}</view>
+              </block>
+            </view>
+            <block wx:if='{{item.isagent == 1 && item.status == 1}}'>
+              <view class='row-remark'>
+                <view>+{{item.commission_total}}</view>
+                <view>{{item.agentcount}}个成员</view>
+              </view>
+            </block>
+            <block wx:else>
+              <view class='row-remark'>
+                <view>消费: {{item.moneycount + textyuan}}</view>
+                <view>{{item.ordercount}}个订单</view>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </block>
+    <block wx:if='{{list.length < 1}}'>
+      <view class='center'>
+        <view class='empty-tip'>
+          <image class='light' src='/static/images/icon/lights-128.png'></image>
+          <view class='text-cancel'>暂时没有任何数据</view>
+        </view>
+      </view>
+    </block>
+    <block wx:if='{{loaded && list.length > 0}}'>
+      <view class='fui-loading empty'>
+        <view class='text'>没有更多了</view>
+      </view>
+    </block> -->
+  </view>
+</block>

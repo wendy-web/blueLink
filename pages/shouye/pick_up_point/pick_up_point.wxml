@@ -1,0 +1,25 @@
+<!--pages/shouye/pick_up_point/pick_up_point.wxml-->
+<block wx:if='{{true}}'>
+  <view class='page'>
+    <block>
+      <block wx:for='{{list}}'wx:key="{{index}}">
+        <view class='fui-list-group'>
+          <view class='fui-list address-item'>
+            <view class='fui-list-media' data-index='{{index}}' bindtap='select'>
+              <radio color='#fd5454' checked='' class='zoom-70' name='default'></radio>
+            </view>
+            <view class='fui-list-inner' data-index='{{index}}' bindtap='select'>
+              <view class='title'>编号:{{item.number}}  电话:{{item.telephone}}</view>
+              <view class='text'>{{item.province}}{{item.city}}{{item.area}}{{item.address }}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+    <block wx:if='{{list.length < 1 && loaded}}'>
+      <view class='fui-loading empty'>
+        <view class='text'>没有数据</view>
+      </view>
+    </block>
+  </view>
+</block>

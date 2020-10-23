@@ -1,0 +1,85 @@
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+  <view class="hs_center_top flex flex-col flex-center ">
+    <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/bingzhuangtu.png"></image>
+    <text>{{total_turnover || 0}}</text>
+    <text>团队营业额</text>
+  </view> 
+  <view class='page navbar com-down'>
+    <view class='fui-tab fui-tab-warning yy_center'>
+      <block >
+        <view bindtap='myTab' class='item {{type == "0"?"active":""}}' data-level='0' style="background:#FEFEE2;">本周业绩</view>
+        <view bindtap='myTab' class='item {{type == "1"?"active":""}}' data-level='1' style="background:#FEFF7D;">本月业绩</view>
+        <view bindtap='myTab' class='item {{type == "5"?"active":""}}' data-level='5' style="background:#FCFF00;">上季度业绩</view>
+        <view bindtap='myTab' class='item {{type == "-1"?"active":""}}' data-level='-1' style="background:#FFA3A4;">自定义查询</view>
+      </block>
+    </view>
+    <!-- 自定义搜索的时间选择器 -->
+    <view class="searchList" wx:if="{{ type == -1 }}">
+        <text>请按时间段来精准搜索结果(按周，月，季度的时间)</text>
+        <view class="section flex flex-jcsp">
+          <picker mode="date" value="{{date}}" start="2020-09-01" end="{{dayStart}}" bindchange="startDateChange">
+            <view class="picker">
+              请选起点时间: {{startTime}}
+            </view>
+          </picker>
+          <picker mode="date" value="{{date}}" start="2020-09-01" end="{{dayEnd}}" bindchange="endDateChange">
+            <view class="picker">
+              请选终点时间: {{endTime}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    <!-- <block wx:if='{{list.length > 0}}'> -->
+      <block>
+      <view class="yy_center_list">
+        <view class="yy_center_item flex flex-center flex-jcsp">
+          <view>头像</view>
+          <view>ID号</view>
+          <view>级别</view>
+          <view>姓名</view>
+          <view>下线</view>
+          <view>交易产品信息</view>
+          <view>数量</view>
+        </view>
+        <view class='fui-list-group'>
+          <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key="list">
+            <view class="yy_center_itemlist flex flex-center flex-jcsp">
+              <view class="yy_center_img">
+                <image src='{{item.avatar || "/static/images/noface.png"}}'></image>
+              </view>
+              <view>{{item.id}}</view>
+              <view>{{item.level_title}}</view>
+              <view>{{item.nickname}}</view>
+              <view>{{item.commission_level || ''}}</view>
+              <view>{{item.title || ''}} {{item.price || ''}}元/件</view>
+              <view>{{item.total || 0}}件</view>
+            </view>
+          </block>       
+        </view>
+        <block wx:if='{{!loading}}'>
+          <view class='fui-loading'>
+            <view class='icon'></view>
+            <view class='text'>正在加载</view>
+          </view>
+        </block>
+        <block wx:if='{{loaded && list.length > 0}}'>
+          <view class='fui-loading empty'>
+            <view class='text'>没有更多了</view>
+          </view>
+        </block>
+        <block wx:if='{{list.length <= 0}}'>
+          <view class='fui-loading empty'>
+            <view class='text'>没有数据</view>
+          </view>
+        </block>
+      </view>
+      <view class="yy_bottom flex flex-center flex-jcsp">
+        <view class="yy_bottom_item">本周总业绩：{{time_total_turnover || 0}}元</view>
+        <view class="yy_bottom_item">本周总佣金：{{time_total_commission || 0}}元</view>
+      </view>
+    </block>
+  </view>
+</block>

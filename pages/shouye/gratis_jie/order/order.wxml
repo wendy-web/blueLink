@@ -1,0 +1,121 @@
+<!--pages/shouye/gratis_jie/order/order.wxml-->
+<!-- <text>pages/shouye/gratis_jie/order/order.wxml</text> -->
+<Address></Address>
+<!-- 商品订单信息开始 -->
+<view class="p10" style="font-size:28rpx;">
+  <view class="font16">兑换商品订单信息</view>
+  <view class="flex" style="margin-top:20rpx;overflow:hidden">
+    <view class="" style="width:180rpx;height:160rpx;border:2rpx solid red"><image src="" style="width:100%;height:100%"></image></view>
+    <view class="flex flex-cloumn" style="flex:1;padding-left:20rpx;justify-content:space-between;">
+      <view class="flex font16" style="justify-content:space-between">
+        <text style="width:190rpx" class="textOver">心相印竹抽巾</text>
+        <text>18包*140抽</text>
+        <text style="color:#888">￥25.00</text>
+      </view>
+      <view class="flex" style="justify-content:space-between;align-items: center">
+        <view style="color:red;padding:0rpx 16rpx;border:2rpx solid red;border-radius: 15rpx">25元红包兑品</view>
+        <text style="color:#888">X 1</text>
+      </view>
+      <view>运费要另付7元，只要另消费满27元可享受全免运费。</view>
+    </view>
+  </view>
+  <!-- 兑换商品 -->
+  <view class="font16">
+    <view style="padding:20rpx 0;">商品订单信息</view>
+    <view style="margin-bottom:20rpx" class="flex" wx:for="{{2}}" wx:key="{{index}}">
+      <view class="" style="width:180rpx;height:160rpx;border:2rpx solid red"><image src="" style="width:100%;height:100%"></image></view>
+      <view class="flex flex-cloumn" style="flex:1;padding-left:20rpx;justify-content:flex-start;">
+        <view class="flex font16" style="justify-content:space-between">
+          <text style="width:190rpx" class="textOver">心相印竹抽巾</text>
+          <text style="color:#888">￥25.00</text>
+        </view>
+        <view class="flex" style="justify-content:space-between;align-items: center">
+          <text style="width:340rpx;" class="font14">健康水果、良知果农、农民价格 </text>
+          <text style="color:#888">X 1</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 商品订单信息结束 -->
+<!-- 订单备注开始 -->
+<view class="p10 font16" style="">
+  <view style="color:#333">买家备注</view>
+  <view class="section">
+    <textarea maxlength="80" style="height:100%" value="" bindblur="bindTextAreaBlur" auto-height placeholder="输入订单备注···" />
+  </view>
+</view>
+<!-- 订单备注结束 -->
+
+<!-- 支付金额信息 -->
+<view class="flex p10 font16" style="height:160rpx;color:#888;border-top:4rpx solid rgb(247,247,247)">
+  <view style="flex:2;border-right:2rpx solid #ccc" class="flex flex-cloumn">
+    <text>商品金额</text>
+    <text style="margin-top:10rpx">运费</text>
+  </view>
+  <view style="flex:1" class="font14 text-c">
+    <view>25元红包兑品</view>
+    <view>￥33.3</view>
+    <view>￥7</view>
+    <view class="font16" style="font-weight:600">合计：￥33.3</view>
+  </view>
+</view>
+<!-- 支付金额信息结束 -->
+<!-- 配送方式开始 -->
+<view class="p10 font16" style="border-top:2rpx solid #ccc;margin-bottom:240rpx;color:#888">
+  <view class="flex" style="justify-content:space-between">
+    <text>配送方式</text>
+    <text>快递配送</text>
+  </view>
+  <view class="" style="padding:20rpx 0;color:#000">
+    <view>选择抵扣红包方式</view>
+    <view class="flex" style="justify-content:space-between;padding-top:20rpx;">
+    <view class="font14">
+      <checkbox-group bindchange="" style="">
+        <label class="checkbox">
+          抵扣红包2.5元 <checkbox value="" checked=""/>
+        </label>
+      </checkbox-group>
+      <view style="font-size:20rpx;color:#888">(如果没有 红包 抵扣不了)</view>
+    </view>
+    <view class="font14">
+      <checkbox-group bindchange="" style="">
+        <label class="checkbox">
+          VIP消费卡：抵扣5元 <checkbox value="" checked=""/>
+        </label>
+      </checkbox-group>
+      <view style="font-size:20rpx;color:#888">(如果没有 红包 抵扣不了)</view>
+    </view>
+    </view>
+  </view>
+</view>
+
+<!-- 配送方式结束 -->
+
+
+
+
+<!-- 底部 -->
+<view class="navBar flex flex-cloumn" style="z-index:2">
+  <view class="flex" style="background:#fff;flex:1;border-top:2rpx solid #ccc;">
+    <view style="flex:2;align-items:center;padding-left:30rpx" class="flex">
+      <view style="width:60rpx;height:60rpx">
+        <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/wechatPay.png" style="width:100%;height:100%"></image>
+      </view>
+      <text class="font16" style="margin-left:20rpx">微信支付</text>
+    </view>
+    <view style="flex:1;align-items:center" class="flex">
+      <checkbox-group bindchange="checkboxChange">
+        <checkbox value="" checked=""/>
+      </checkbox-group>
+    </view>
+  </view>
+  <view class="flex" style="background:#fff;flex:1">
+    <view style="flex:2;border-top:2rpx solid #ccc;align-items:center;justify-content:space-around" class="flex font16">
+        <text style="color:#888">合计:￥33.3</text> <text style="color:red">实付款:￥28.3</text>
+    </view>
+    <view style="flex:1; color:#fff" class="bg_red flex flex-c" bindtap="pay">
+        立即支付
+    </view>
+  </view>
+</view>

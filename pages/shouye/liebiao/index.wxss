@@ -1,0 +1,8 @@
+.page.header-sort{
+  padding-top: 0rpx;
+}
+.dikou{
+  color: red;
+  font-size: 28rpx;
+}
+

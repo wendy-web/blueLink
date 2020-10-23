@@ -1,0 +1,25 @@
+
+<SuccessPay price="{{price}}"/>
+
+<view class="ddfang">
+  <view>付款方式</view>
+  <view wx:if="{{paytype==1}}">微信支付</view>
+  <view wx:if="{{paytype==2}}">余额支付</view>
+</view>
+<view class="ddbtn">
+  <view bindtap="again">再来一单</view>
+  <view bindtap="chakan">查看拼车详情</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+

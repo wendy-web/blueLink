@@ -1,0 +1,72 @@
+/* pages/shouye/gratis_jie/shopInfo/shopInfo.wxss */
+.w100{
+  width: 100%;
+}
+.p10{
+  padding: 0 20rpx;
+}
+.flex{
+  display: flex;
+}
+.flex-column{
+  flex-direction: column;
+}
+.flex-c{
+  justify-content: center;
+  align-items: center;
+}
+.text-c{
+  text-align: center
+}
+.bg_red{
+  background: rgb(240, 0, 1);
+}
+.navBar{
+  width: 100%;
+  height: 120rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0
+}
+.kf{
+  border-top:2rpx solid rgb(175,175,175);
+  border-bottom:2rpx solid rgb(175,175,175);
+}
+
+.exchange{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 120rpx;
+  height: 180rpx;
+}
+
+.font14{
+  font-size: 28rpx;
+}
+
+.section{
+  height: 100rpx;
+  margin-top: 20rpx;
+}
+checkbox .wx-checkbox-input {
+  width: 30rpx;
+  height: 30rpx;
+  border: 4rpx solid #999;
+}
+radio .wx-radio-input{
+  width: 30rpx;
+  height: 30rpx;
+  border: 4rpx solid #999;
+  border-radius: 0;
+}
+
+radio .wx-radio-input.wx-radio-input-checked{
+   border: none;
+   background: red;
+}
+
+.flex-jcsa{
+  justify-content:space-around;
+  align-items: center;
+}

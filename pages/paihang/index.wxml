@@ -1,0 +1,85 @@
+<view class="su_container page">
+  <view class="su_tab flex flex-wrap flex-center flex-ver ">
+    <view bindtap='myTab' class='item item_left {{cate == "0"?"active":""}}' data-cate='0'>消费者</view>
+    <view bindtap='myTab' class='item {{cate == "1"?"active":""}}' data-cate='1'>团长</view>
+    <view bindtap='myTab' class='item item_right {{cate == "2"?"active":""}}' data-cate='2'>运营中心</view>
+  </view>
+
+  <block wx:if='{{cate}}'> 
+    <view class="oy_center_guangjun flex ">
+      <view class='{{guan == "1"?"on_active":""}}' bindtap="guangjun" data-guan="1">上月冠军</view>
+      <view class='{{guan == "5"?"on_active":""}}' bindtap="guangjun" data-guan="5">上季度冠军</view>
+      <view class='{{guan == "6"?"on_active":""}}' bindtap="guangjun" data-guan="6">上年冠军</view>
+      <view class='{{guan == "0"?"on_active":""}}' bindtap="guangjun" data-guan="0">上月冠军进行中</view>
+      <view class='{{guan == "2"?"on_active":""}}' bindtap="guangjun" data-guan="2">本季度冠军</view>
+    </view> 
+    <view class="oy_center_beijing" style="background-image:url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/beijingtu.png)">
+      <view class="oy_center_paihang flex flex-jcsb">
+        <block wx:for='{{paihang}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+          <view class="oy_center_item flex flex-col flex-center">
+            <image src='{{item.avatar || "/static/images/noface.png"}}'></image>
+            <text class="oy_center_name">{{item.nickname || '默认'}}</text>
+            <text class="oy_center_yingye">上月营业额：{{item.total_turnover || 0}}元</text>
+            <view class="oy_center_paiming">第{{item.ranking || 0}}名</view>
+          </view>        
+        </block>
+      </view>
+      <view class="oy_center_neirong">
+        <view class="oy_center_tuanzhang">上月团长 获奖前 15名</view>
+        <view class="oy_center_top flex flex-jcsb">
+          <view>用户名</view>
+          <view>月度发展下线人数</view>
+          <view>月度营业额</view>
+          <view>信誉总分</view>
+        </view>
+        <block wx:for='{{list}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+          <view class="oy_center_topitem flex flex-jcsb">
+            <view class="oy_center_nickname"><text class="oy_center_num">{{item.ranking}}</text> {{item.nickname || '默认'}}</view>
+            <view>本月发展{{item.invite_num}}人</view>
+            <view>{{item.total_turnover}}元</view>
+            <view>{{item.sincerity_ip}}分</view>
+          </view>
+        </block>
+      </view>
+    </view> 
+
+  </block>
+  <block wx:if='{{cate == "shiti"}}'>
+    <view class="oy_center_guangjun flex ">
+      <view class="on_active" bindtap="guangjun" data-guan="1">上月冠军</view>
+      <view bindtap="guangjun" data-guan="2">上季度冠军</view>
+      <view bindtap="guangjun" data-guan="3">上年冠军</view>
+      <view bindtap="guangjun" data-guan="4">上月冠军进行中</view>
+      <view bindtap="guangjun" data-guan="5">本季度冠军</view>
+    </view>
+    <view class="oy_center_beijing" style="background-image:url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/beijingtu.png)">
+      <view class="oy_center_paihang flex flex-jcsb">
+        <block wx:for='{{paihang}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+          <view class="oy_center_item flex flex-col flex-center">
+            <image src="{{item.src}}"></image>
+            <text class="oy_center_name">{{item.name}}</text>
+            <text class="oy_center_yingye">上月营业额：{{item.price}}元</text>
+            <view class="oy_center_paiming">{{item.mingci}}</view>
+          </view>        
+        </block>
+      </view>
+      <view class="oy_center_neirong">
+        <view class="oy_center_tuanzhang">上月运营中心 获奖前 15名</view>
+        <view class="oy_center_top flex flex-jcsp">
+          <view>用户名</view>
+          <view>月度发展下线人数</view>
+          <view>月度营业额</view>
+          <view>信誉总分</view>
+        </view>
+        <block wx:for='{{libiao}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+          <view class="oy_center_topitem flex flex-jcsp">
+            <view><text class="oy_center_num">{{item.id}}</text> {{item.name}}</view>
+            <view>本月发展{{item.num}}人</view>
+            <view>{{item.price}}元</view>
+            <view>{{item.fengshu}}分</view>
+          </view>
+        </block>
+      </view>
+    </view> 
+  </block>
+</view>

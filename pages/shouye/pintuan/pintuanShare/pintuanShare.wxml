@@ -1,0 +1,74 @@
+<!--pages/shouye/pintuan/pintuanShare/pintuanShare.wxml-->
+<view class="p10 flex">
+  <view style="width:240rpx;height:240rpx;">
+    <image style="width:100%;height:100%" src="{{info.goods.thumb}}"></image>
+  </view>
+  <view style="width:calc(100% - 240rpx);color:#888;padding-left:10rpx" class="flex-cloumn flex flex-jcsb">
+    <view class="text-hide">低至{{info.goods.groupsprice}}元！ {{info.goods.title}}</view>
+    <view class="font14" style="color:red">已拼{{info.goods.teamnum}}件</view>
+    <view style="color:red" class="font16">拼购价 ￥
+      <text class="font23">{{info.goods.groupsprice}}</text>
+    </view>
+    <view class="font16">单买价 ￥
+      <text style="text-decoration:line-through">{{info.goods.singleprice}}</text>
+    </view>
+  </view>
+</view>
+
+<view style="border-top:4rpx solid #ccc" class="p10">
+  <view class="flex flex-c font16">
+    还差
+    <text style="color:red">{{info.n}}人</text>拼团成功，还剩{{info.time}}
+  </view>
+  <view class="flex flex-c" style="margin:40rpx 20rpx 0;">
+    <view wx:for="{{info.orders}}" wx:key="{{index}}" class="flex flex-c" style="width:160rpx;height:160rpx;position: relative">
+      <view class="flex flex-c" style="width:100rpx;height:100rpx;">
+        <image style="border:2rpx dashed red;border-radius:100%" src="{{item.avatar}}"></image>
+        <!-- <text>?</text> -->
+      </view>
+      <text wx:if="{{item.heads==1? true : false}}" class="font14 flex flex-c" style="background: rgb(248,172,53);position:absolute;top:16rpx;left:18rpx;border-radius:20rpx;border:2rpx silde #fff;padding:0 8rpx;color:rgb(170,117,8)">拼主</text>
+    </view>
+
+
+    <view wx:for="{{info.arr}}" wx:key="{{index}}" class="flex flex-c" style="width:160rpx;height:160rpx;position: relative">
+      <view class="flex flex-c" style="width:100rpx;height:100rpx;border:2rpx dashed rgb(248,172,53);border-radius:100%">
+        <text>?</text>
+      </view>
+    </view>
+  </view>
+
+  <view style="margin-top:60rpx;">
+    <view bindtap="showModel" style="text-align:center;padding:20rpx 0;color:#fff;border-radius:10rpx;background:rgb(210,31,55)" class="w100">我要参团</view>
+  </view>
+</view>
+
+
+
+
+<view class="cover_screen" wx:if="{{showModalStatus}}" catchtouchmove='ture'></view>
+<!-- 弹窗 -->
+<view animation="{{animationData}}" class="buy_box" wx:if="{{showModalStatus}}">
+    <view class="optinsBox flex" style="">
+      <view class="imgBox">
+        <image src="{{modelInfo.goods.thumb}}" style="width:100%;height:100%"></image>
+      </view>
+      <view style="flex:1">
+        <view class="" style="margin-left:180rpx;padding: 0 0 0 10rpx">
+          <view class="flex" style="justify-content: space-between;">
+            <text style="color:red">￥{{modelInfo.goods.marketprice}}</text>
+            <text bindtap="hideBuyModal" style="padding:4rpx 8rpx">X</text>
+          </view>
+          <view class="font14">{{modelInfo.goods.title}}</view>
+        </view>
+        <view style="overflow:scroll; margin-bottom:80rpx;margin-top:60rpx">
+          <view wx:for="{{modelInfo.specs}}" wx:key="{{id}}" class="font16" style="margin-top:20rpx">
+            <view style="color:#888">{{item.title}}</view>
+            <view class="flex flex-warp flex-jcfs font14">
+              <view data-specs="{{item}}" data-id="{{i.id}}" bindtap="sele" class="shopOption {{i.sele? 'active' : ''}}" wx:for="{{item.items}}" wx:key="{{index}}" wx:for-item="i">{{i.title}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="trueBtn" bindtap="optionsPay">确定</view>
+      </view>
+    </view>
+</view>

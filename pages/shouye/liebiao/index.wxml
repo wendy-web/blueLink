@@ -1,0 +1,52 @@
+<template name="tpl_list">
+  <view class='fui-goods-item'>
+    <navigator hoverClass="none" url="/pages/goods/detail/index?id={{item.id}}">
+        <view class="image" style="background-image:url({{item.thumb}})"></view>
+    </navigator>
+    <view class='detail'>
+        <block >
+            <view class="dikou">可vip抵扣</view>
+        </block>
+        <navigator hoverClass="none" url="/pages/goods/detail/index?id={{item.id}}">
+            <view class='name'>
+                {{item.title}}
+            </view>
+        </navigator>
+        <view class='price'>
+            <view class='text'>
+                ￥{{item.marketprice}}
+            </view>
+        </view>
+    </view>
+  </view> 
+</template>
+<view class='page header-sort navbar'>
+  <view class='fui-goods-group {{listmode}}'>
+    <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key="*this">
+      <template is="tpl_list" data="{{ item:item }}" />
+    </block>
+  </view>
+
+  <block wx:if='{{loading}}'>
+    <view class='fui-loading'>
+      <view class='icon'></view>
+      <view class='text'>正在加载</view>
+    </view>
+  </block>
+  <block wx:if='{{list.length == total && total > 0}}'>
+    <view class='fui-loading empty'>
+      <view class='text'>没有更多了</view>
+    </view>
+  </block>
+  <block wx:if='{{total <= 0 && !loading}}'>
+    <view class='fui-loading empty'>
+      <view class='text'>暂时没有任何商品</view>
+    </view>
+  </block>
+  <view class='fui-toast out'>
+    <view class='text'>
+    </view>
+  </view>
+</view>
+<view bindtap='showFilter' class='fui-mask {{isFilterShow?"show":"hide"}}'>
+</view>

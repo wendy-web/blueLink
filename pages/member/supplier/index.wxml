@@ -1,0 +1,313 @@
+<view class="su_container page">
+  <view class="su_top_image"><image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/fenxiangtoubu.png"></image> </view>
+  <view class="su_tab flex flex-wrap flex-center flex-ver ">
+    <view bindtap='myTab' class='item item_left {{cate == ""?"active":""}}' data-cate=''>我有好货</view>
+    <view bindtap='myTab' class='item {{cate == "shop"?"active":""}}' data-cate='shop' wx:if="{{!dlcheng}}">联盟商家</view>
+    <view bindtap='myTab' class='item {{cate == "shop111"?"active":""}}' data-cate='shop111' wx:if="{{dlcheng==1}}">联盟商家</view>
+    <view bindtap='myTab' class='item item_right {{cate == "shiti"?"active":""}}' data-cate='shiti'>实体落地</view>
+  </view>
+  <!-- 我有好货 -->
+  <block wx:if='{{cate == ""}}'>
+    <view class="su_center">
+      <view class="oy_form_list flex flex-ver">
+        <view class="oy_form_title flex flex-ver">
+            <view>你的姓名：</view>
+        </view>
+        <view class="flex-1 oy_form_right flex flex-ver">
+            <input type='text' bindinput='nameChange' placeholder='请输入你的真实姓名' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder"  ></input>
+        </view>
+      </view>
+      <view class="oy_form_list flex flex-ver">
+        <view class="oy_form_title flex flex-ver">
+            <view>联系方式：</view>
+        </view>
+        <view class="flex-1 oy_form_right flex flex-ver">
+            <input type='tel' bindinput='telChange' placeholder='请输入你的手机号' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder"  ></input>
+        </view>
+      </view>
+      <view class="oy_form_list flex flex-ver">
+        <view class="oy_form_title flex flex-ver">
+            <view>你的地址：</view>
+        </view>
+        <view class="flex-1 oy_form_right flex flex-ver">
+          <input type='text' bindinput='haohuoChange' placeholder='点击获取详细地址' class="flex-1 oy_form_input" placeholder-class="oy_placeholder" data-type='mobile' value='{{addr_detailhao}}'></input>
+          <view bindtap="chose_location" class="weui-cell__hd" data-location="haohuo">
+            <view class="weui-pos"></view>
+          </view>
+        </view>
+      </view>
+      <view class="oy_form_textarea">
+        <view class="oy_form_title flex flex-ver">
+            <view>产品详情：</view>
+        </view>
+        <view class="section">
+          <textarea bindblur="bindTextAreaBlur" placeholder="请描述你所提供的产品情况" maxlength="-1" />
+        </view>
+      </view>
+      <view class="oy_from_upload flex flex-ver" >
+        <view class="oy_form_title flex flex-ver">
+            <view>产品图片：</view>
+        </view>
+        <block wx:for="{{haohuoFilePaths}}" wx:for-item='item' wx:key='tempFilePaths'>
+          <image src="{{item}}"></image>
+        </block>
+        <view class="oy_form_right flex flex-ver">
+            请你所能提供的产品图片上传
+        </view>
+        <view class="oy_form_img" bindtap="uploadtu">
+            <image src="../../img/GIS-time.png"></image>
+        </view>
+      </view>
+      <view class="oy_from_upload flex flex-ver">
+        <view class="oy_form_title flex flex-ver">
+            <view>产品视频：</view>
+        </view>
+         <block wx:for="{{haohuovideoFilePaths}}" wx:for-item='item' wx:key='tempFilePaths'>
+          <video src="{{item}}"></video>
+        </block>
+        <view class="oy_form_right flex flex-ver">
+            请你所能提供的产品视频上传
+        </view>
+        <view class="oy_form_img" bindtap="uploadtu">
+            <image src="../../img/GIS-time.png"></image>
+        </view>
+      </view>
+      <view class="oy_from_btn " bindtap="haohuotijiao">提交申请</view>
+    </view>
+  </block>
+  <!-- 联盟商家 -->
+  <block wx:if='{{cate == "shop"}}'> 
+    <view class="su_center_image flex flex-center">
+      <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/tou2.png"></image>
+      <view class="su_center_text">
+        <view class="su_center_top">中国一手货源</view>
+        <view class="su_center_bottom">满200元，送货上门</view>
+      </view>
+    </view> 
+    <view class="su_tow_btn flex flex-center ">
+      <view class='su_login {{btn == "login" ? "active_on" : "" }}'  bindtap="btnclick" data-btn="login">登录</view>
+      <view class='su_reginer {{btn == "reginer" ? "active_on" : "" }} '  bindtap="btnclick" data-btn="reginer">申请注册</view>
+    </view>
+    <block wx:if='{{btn == "reginer"}}'>
+      <view class="su_center">
+        <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>登录账号：</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='text' bindinput='zhanghao' placeholder='可设手机号' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder" data-type='zhanghao' ></input>
+          </view>
+        </view>
+        <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>登录密码：</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='tel' bindinput='upwd' placeholder='设置6位数字方可' class="flex-1 oy_form_input" maxlength='6' placeholder-class="oy_placeholder" data-type='upwd' ></input>
+          </view>
+        </view>
+        <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>你的姓名：</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='text' bindinput='name' placeholder='请输入你的真实姓名' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder" data-type='name' ></input>
+          </view>
+        </view>
+        <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>联系方式：</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='tel' bindinput='mobile' placeholder='请输入你的手机号码' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder" data-type='mobile' ></input>
+          </view>
+        </view>
+        <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>你的地址</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='text' bindinput='inputChange' placeholder='点击获取详细地址' class="flex-1 oy_form_input" placeholder-class="oy_placeholder" data-type='addr_detail' value='{{addr_detail}}'></input>
+          </view>
+          <view bindtap="chose_location" class="weui-cell__hd" data-location="lianmen">
+          <view class="weui-pos"></view>
+          </view>
+        </view>
+        <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>店名称</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='text' bindinput='shopname' placeholder='请输入你的店铺名称' class="flex-1 oy_form_input"  placeholder-class="oy_placeholder" data-type='shopname' ></input>
+          </view>
+        </view>
+        <view class="oy_from_upload flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>营业执：</view>
+          </view>
+          <block wx:for="{{tempFilePaths}}" wx:for-item='item' wx:key='tempFilePaths'>
+            <view class="oy_form_img" >
+              <image src="{{item}}"></image>
+            </view>
+          </block>
+          <view class="oy_form_img" bindtap="fileimg" data-cate="yingyezhi">
+            <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/shangchuan.png"></image>
+          </view>
+          <view class="oy_form_shuoming">(分别上传营业照和门店照)</view>
+        </view>
+        <view class="oy_form_list flex flex-ver">
+          <checkbox-group bindchange="checkboxChange">
+            <label class="checkbox" >
+              <checkbox value="1" checked=""/>请您阅读完本合同内容，并同意签约
+            </label>
+          </checkbox-group>
+        </view>
+        <view class="oy_from_btn" bindtap="formSubmit">申请注册</view>
+      </view>
+    </block>
+    <block wx:if='{{btn == "login"}}'>
+      <view class="su_center">
+        <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>登录账号：</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='text' bindinput='zhanghao' placeholder='可设手机号' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder" data-type='zhanghao' ></input>
+          </view>
+        </view>
+        <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>登录密码：</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='tel' bindinput='upwd' placeholder='设置6位数字方可' class="flex-1 oy_form_input" maxlength='6' placeholder-class="oy_placeholder" data-type='upwd' ></input>
+          </view>
+        </view>
+        <view class="oy_from_btn" bindtap="denglu">
+          登录
+        </view>
+      </view>
+    </block>
+  </block>
+  <!--  -->
+  <block wx:if='{{cate == "shop111" && dlcheng == 1}}'> 
+    <view wx:for="{{lm_shopList}}" wx:key="{{index}}" wx:for-item="i">
+      <view class="su_center_image flex flex-center">
+        <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/toubu.png"></image>
+      </view>
+      <!-- 季节热销产品 -->
+      <view class="fruits_box flex flex-jcsb flex-wrap">
+        <view class="fruits_tile" style="background-image:url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/jijie.png);">
+          <view>季节热销产品</view>
+          <view>这里就是你们后方花园</view>
+        </view>
+        <view class="fruits_li" wx:for="{{i.goods}}" wx:key="{{index}}" bindtap="goto" data-id="{{item.id}}">
+          <image class="fruits_img" src="{{item.thumb}}"></image>
+          <view class="flex flex-jcsb">
+            <view class="su_center_red flex flex-col bagr_red">
+              <text>{{item.title}}</text>
+              <text wx:if="{{item.isdeduct != 1}}">可抵扣红包/VIP卡</text>
+              <text style="text-decoration: line-through;" wx:else>可抵扣红包/VIP卡</text>
+              <text class="font_siz40">￥{{item.marketprice || 0}}<text class="through">市场价：{{item.productprice || 0}}</text></text>
+            </view>
+            <view class="btn_box flex flex-col flex-center">
+                <text>{{item.unit}}</text>
+              <button>抢货源</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 实体落地 -->
+  <block wx:if='{{cate == "shiti"}}'>
+    <view class="su_center_image flex flex-center">
+      <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/tou2.png"></image>
+      <view class="su_center_text">
+        <view class="su_center_top">产品体验中心</view>
+        <view class="su_center_bottom">体检健康，品味人生</view>
+      </view>
+    </view>
+    <view class="su_tow_btn flex flex-center ">
+      <view class="su_login" bindtap="btnview" data-subtn="login">登录</view>
+      <view class="su_reginer active_on"  bindtap="btnview" data-subtn="shengqing">申请开店</view>
+    </view>
+    <block wx:if='{{subtn == "shengqing"}}'>
+      <view class="su_center">
+        <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>账号登录：</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='text' bindinput='inputChange' placeholder='可设手机号' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder" data-type='mobile' value='{{postData.mobile}}'></input>
+          </view>
+        </view>
+        <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>登录密码：</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='tel' bindinput='inputChange' placeholder='设置6位数字方可' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder" data-type='mobile' value='{{postData.mobile}}'></input>
+          </view>
+        </view>
+        <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>你的姓名：</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='text' bindinput='inputChange' placeholder='请输入你的真实姓名' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder" data-type='mobile' value='{{postData.mobile}}'></input>
+          </view>
+        </view>
+        <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>联系方式：</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='text' bindinput='inputChange' placeholder='请输入你的手机号码' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder" data-type='mobile' value='{{postData.mobile}}'></input>
+          </view>
+        </view>
+        <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>你的地址</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='text' bindinput='inputChange' placeholder='请输入你的详细地址' class="flex-1 oy_form_input" placeholder-class="oy_placeholder" data-type='mobile' value='{{postData.mobile}}'></input>
+          </view>
+        </view>
+        <view>
+          <view>请选择以下实体店</view>
+          <checkbox-group bindchange="checkboxChange">
+            <label class="checkbox" >
+              <checkbox value="团优优.便民店" checked=""/>团优优.便民店
+            </label>
+            <label class="checkbox" >
+              <checkbox value="早市生活" checked=""/>早市生活
+            </label>
+            <label class="checkbox" >
+              <checkbox value="农产品养生时尚店" checked=""/>农产品养生时尚店
+            </label>
+          </checkbox-group>
+        </view>
+        <!-- <view class="oy_form_list flex flex-ver">
+          <view class="oy_form_title flex flex-ver">
+              <view>推荐码：</view>
+          </view>
+          <view class="flex-1 oy_form_right flex flex-ver">
+              <input type='text' bindinput='inputChange' placeholder='请输入你推荐人的ID号' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder" data-type='mobile' value='{{postData.mobile}}'></input>
+          </view>
+        </view> -->
+        <!--  bindtap="formSubmit" 联盟商家 -->
+        <view class="oy_from_btn">
+          申请开店
+        </view>
+      </view>
+    </block>
+  </block>
+    <!-- 选择图片或视频 -->
+  <block wx-if="{{showbtn}}"> 
+    <view class='hs_shangchuang'>
+      <button data-type='hs_video' bindtap='upload_video' bindtap="uploadVideoBtn" >视频上传</button>
+      <button data-type='hs_img' bindtap='fileimg' bindtap="uploadImgBtn">图片上传</button>
+    </view>
+  </block>
+</view>

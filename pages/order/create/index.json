@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "navigationBarBackgroundColor": "#FE0000",
+  "usingComponents": {
+    "Address": "/component/Address/Address"
+  }
+}

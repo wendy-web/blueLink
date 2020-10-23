@@ -1,0 +1,32 @@
+<view class="textList">
+  <view class="flex flex-jcsb flex-center-align" wx:for="{{common_problem}}" wx:key='*this'>
+    <navigator url="/pages/member/serviceDetail/serviceDetail?id={{item.id}}" class="nav flex flex-jcsb flex-center-align" hover-class='none'>
+    <view class="felx flex-center-align">
+      <!-- <i class="iconfont icon-jinggao"></i> -->
+      <image src="{{item.icon}}"></image>
+      <p>{{item.title}}</p>
+    </view>
+    <i class="iconfont icon-xiangyou"></i>
+    </navigator>
+  </view>
+</view>
+<view class="grayText">客户服务 {{work_time}}</view>
+<view class="flex serBtn">
+  <button bindtap="phoneHandle">
+    <i class="iconfont icon-dianhua2"></i>
+    <p>电话客服</p>
+  </button>
+  <button open-type="contact" MsgType="miniprogrampage" send-message-title="" send-message-img="" show-message-card="true" name="客服">
+    <i class="iconfont icon-2zaixiankefucheng"></i>
+    <p>在线客服</p>
+  </button>
+</view>
+<!-- 呼叫的弹窗 -->
+<view class="callBg" wx:if="{{callBool}}" >
+  <view class="callBox">
+    <view class="callNum">{{telephone}}</view>
+    <view class="callBtn" bindtap="freeTell">呼叫</view>
+    <view bindtap="phoneHandle">取消</view>
+  </view>
+</view>
+

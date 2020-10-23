@@ -1,0 +1,82 @@
+<view class="su_container page">
+  <view class="su_top_image"><image src="{{topImg}}"></image></view>
+  <!-- 选择列表 -->
+  <view class="su_tab flex flex-wrap flex-center flex-ver ">
+    <block wx:for="{{ccates}}" wx:item="{{item}}" wx:key="ccates" data-index="{{index}}" >
+      <view bindtap='myTab' class='item {{active == index ? "active" : ""}}' data-cate='{{item.id}}' data-index='{{index}}'>{{item.name}}</view>
+    </block>
+  </view>
+
+  <view class="su_center_image flex flex-center">
+    <image src="{{broadImg}}"></image>
+  </view>
+  <!-- 抢购 -->
+  <!-- <navigator url='/pages/shouye/vipka/index' hover-class='none' class="su_center_qianggao flex">
+    <view class="flex flex-col">
+      <text class="su_max">蔬菜消费分红股 570元 VIP卡</text>
+      <text>消费就是在赚钱</text>
+      <text class="su_min">享受全年960元消费权  与满12个月分红权570元  并每次分享成功赚取57元</text>
+    </view>
+    <view>
+      <view class="su_qianggou">抢购</view>
+      <view class="su_text">名额有限</view>
+    </view>
+  </navigator> -->
+  <!-- 拼团商品-->
+  <view class="fruits_tile" style="background-image:url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/pintuan1.png);"></view>
+  <view class="fruits_box flex flex-jcsb flex-wrap">
+    <block wx:for="{{group_goods}}" wx:item="{{item}}" wx:key="group_goods">
+      <view class="fruits_li">
+        <navigator url="/pages/shouye/pintuan/pintuan?id={{item.id}}" hover-class="none">
+        <image class="fruits_img" src="{{item.thumb}}"></image>
+        <view class="flex flex-jcsb">
+          <view class="su_center_red flex flex-col bagr_red">
+            <text>{{item.title}}</text>
+            <text wx:if="{{isdeduct == 1}}">可抵扣红包/VIP卡</text>
+            <text class="font_siz40">￥{{item.groupsprice}}</text>
+            <text class="through">市场价：{{item.price}}</text>
+          </view>
+          <view class="btn_box flex flex-col flex-center">
+              <text>{{item.units}}</text>
+            <button class="shareMoney">分享赚钱</button> 
+            <button>我要拼团</button>
+          </view>
+        </view>
+        </navigator>
+      </view>
+    </block>
+    <view class="group_jiazai" bindtap="pintuanduo">加载更多</view>
+  </view>
+  <!-- <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/shucai.png" class="shucai"></image> -->
+  <!-- 普通商品 -->
+  <view class="fruits_tile" style="background-image:url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/pintuan2.png);"></view>
+  <view class="fruits_box flex flex-jcsb flex-wrap">
+    <block wx:for="{{goods}}" wx:item="{{item}}" wx:key="goods">
+      
+      <view class="fruits_li">
+      <navigator url="/pages/goods/detail/index?id={{item.id}}" hover-class="none">
+        <image class="fruits_img" src="{{item.thumb}}"></image>
+        <view class="flex flex-jcsb">
+          <view class="su_center_red flex flex-col bagr_red">
+            <text>{{item.title}}</text>
+            <text wx:if="{{isdeduct == 1}}">可抵扣红包/VIP卡</text>
+            <text class="font_siz40">￥{{item.productprice}}<text class="through">市场价：￥{{item.marketprice}}</text></text>
+          </view>
+          <view class="btn_box flex flex-col flex-center">
+              <text>{{item.unit}}</text>
+            <button>点击购买</button>
+            <!-- <button>分享赚钱</button> -->
+          </view>
+        </view>
+      </navigator>
+      </view>
+    </block>
+    <view class="group_jiazai" bindtap="putongduo">加载更多</view>
+  </view>
+
+  <view class="til_box flex flex-col">
+    <text>团优优.健康消费平台</text>
+    <text>我们承诺：如果您购买的水果出现坏果烂果，平台根据情况进行退款换果</text>
+    <view class="service"><text>我们客服热线：020-888888888</text><text>微信客服：13333333</text></view>
+  </view>
+</view>

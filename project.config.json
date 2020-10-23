@@ -1,0 +1,510 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": []
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.13.1",
+  "appid": "wxeab99cc78564fdc1",
+  "projectname": "6439-github2",
+  "cloudfunctionTemplateRoot": "",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": [
+        {
+          "id": -1,
+          "name": "会员中心",
+          "pathName": "pages/member/index/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "会员资料",
+          "pathName": "pages/member/info/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "绑定手机",
+          "pathName": "pages/member/bind/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "我的优惠券",
+          "pathName": "pages/sale/coupon/my/index/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "优惠券",
+          "pathName": "pages/sale/coupon/index/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "余额提现",
+          "pathName": "pages/member/withdraw/index",
+          "query": ""
+        },
+        {
+          "id": 19,
+          "name": "pay",
+          "pathName": "pages/order/pay/peerpaydetail",
+          "query": "id=681"
+        },
+        {
+          "id": -1,
+          "name": "fenxiao",
+          "pathName": "pages/index/index",
+          "query": "mid=2924"
+        },
+        {
+          "id": 21,
+          "name": "评论",
+          "pathName": "pages/creditshop/comment/index",
+          "query": "goodsid=51&logid=772"
+        },
+        {
+          "id": 22,
+          "name": "exchange",
+          "pathName": "pages/exchange/detail/index",
+          "query": "key=37975448&groupid=34&sta=1"
+        },
+        {
+          "id": 23,
+          "name": "exchange",
+          "pathName": "pages/seckill/seckill",
+          "query": ""
+        },
+        {
+          "id": 24,
+          "name": "exchange",
+          "pathName": "pages/merch/index/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "积分签到",
+          "pathName": "pages/member/calendar/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "详情记录",
+          "pathName": "pages/member/detailRecords/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "红包余额",
+          "pathName": "pages/member/redpackyue/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "合伙人",
+          "pathName": "pages/member/partner/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "联盟供应商",
+          "pathName": "pages/member/supplier/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "实体店团长",
+          "pathName": "pages/member/shitidian/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "团队营业额",
+          "pathName": "pages/member/yingyee/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "红包余额",
+          "pathName": "pages/member/hongbaoee/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我要分享",
+          "pathName": "pages/member/fenxiang/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "免费街",
+          "pathName": "pages/shouye/gratis_jie/gratis_jie",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "排行榜",
+          "pathName": "pages/paihang/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "vip卡",
+          "pathName": "pages/shouye/vipka/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "首页",
+          "pathName": "pages/shouye/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "扶贫街",
+          "pathName": "pages/shouye/shop_list/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "生活街",
+          "pathName": "pages/shouye/richang/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我要分享",
+          "pathName": "pages/member/fenxiang/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "可用余额",
+          "pathName": "pages/member/redpackyue/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 42,
+          "name": "拼团商品",
+          "pathName": "pages/shouye/pintuan/pintuan",
+          "query": "id=28",
+          "scene": null
+        },
+        {
+          "id": 43,
+          "name": "邀请拼团",
+          "pathName": "pages/shouye/pintuan/pt_invitation/py_invitation",
+          "query": "orderid=694&teamid=694",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "产品详情（拼团）",
+          "pathName": "pages/shouye/pintuan/pintuan",
+          "query": "id=28",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "供应商商品",
+          "pathName": "pages/member/supplier/supplyGoods/supplyGoods",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 46,
+          "name": "拼团成功",
+          "pathName": "pages/shouye/pintuan/pt_success/pt_success",
+          "query": "teamid=11",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "拼团订单",
+          "pathName": "pages/shouye/pintuan/ptOrderList/ptOrderList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "红包兑换商品详情",
+          "pathName": "pages/shouye/gratis_jie/shopInfo/shopInfo",
+          "query": "id=69",
+          "scene": null
+        },
+        {
+          "id": 50,
+          "name": "0元秒杀砍价商品",
+          "pathName": "pages/shouye/gratis_jie/bargain/bargain",
+          "query": "id=67",
+          "scene": null
+        },
+        {
+          "id": 51,
+          "name": "pages/goods/detail/index",
+          "pathName": "pages/goods/detail/index",
+          "query": "id=799",
+          "scene": null
+        },
+        {
+          "id": 52,
+          "name": "邀请砍价",
+          "pathName": "pages/shouye/gratis_jie/bargain/bargainOrder/bargainOrder",
+          "query": "id=374",
+          "scene": null
+        },
+        {
+          "id": 53,
+          "name": "帮人砍",
+          "pathName": "pages/shouye/gratis_jie/bargain/helpBargain/helpBargain",
+          "query": "id=356&shopid=67",
+          "scene": null
+        },
+        {
+          "id": 54,
+          "name": "联盟商家订单",
+          "pathName": "pages/member/supplier/suOrder/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "联盟订单",
+          "pathName": "pages/member/supplier/dingdanzhifu/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "订单详情",
+          "pathName": "pages/member/supplier/xiangqing/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "生活街",
+          "pathName": "pages/shouye/richang/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "分享赚钱",
+          "pathName": "pages/member/fenxiang/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "供应商",
+          "pathName": "pages/member/supplier/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "余额提现",
+          "pathName": "pages/member/redpackyue/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "申请合伙人",
+          "pathName": "pages/member/partner/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "申请合伙人",
+          "pathName": "pages/member/partner/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "申请实体店长",
+          "pathName": "pages/member/shitidian/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "运营中心",
+          "pathName": "pages/member/yunying/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "分公司",
+          "pathName": "pages/member/fengongsi/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "搜索",
+          "pathName": "pages/goods/index/index",
+          "query": "openid:sns_wa_o91fH5aqcUVevk2456O1FWcpqfUE",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "客服",
+          "pathName": "pages/member/service/service",
+          "query": "merchid=109",
+          "scene": null
+        },
+        {
+          "id": 58,
+          "name": "pages/member/fenxiang/index",
+          "pathName": "pages/member/fenxiang/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "运营中心",
+          "pathName": "pages/member/myyunying/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "营业额",
+          "pathName": "pages/member/yingyee/index",
+          "query": "id=681",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "团队",
+          "pathName": "pages/member/myyunying/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "红包余额",
+          "pathName": "pages/member/hongbaoee/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "团队营业额",
+          "pathName": "pages/member/yingyee/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我的订单",
+          "pathName": "pages/order/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "生姜",
+          "pathName": "pages/goods/detail/index",
+          "query": "id=891",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "产品详情",
+          "pathName": "pages/shouye/pintuan/pintuan",
+          "query": "id=46",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "购物车",
+          "pathName": "pages/member/cart/index",
+          "query": "id=69",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

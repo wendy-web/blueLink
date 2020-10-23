@@ -1,0 +1,68 @@
+.com-down .subtitle{ font-size: 28rpx; color: #999 }
+.com-down .image-32{ width: 32rpx; height: 32rpx }
+wx-image{ vertical-align: top }
+.hs_center_top{
+  height: 400rpx;
+  background: #FE0000;
+}
+.hs_center_top>image{
+  width: 300rpx;
+  height: 200rpx;
+  
+}
+.hs_center_top>text{
+  color: #ffffff;
+  padding-top: 10rpx;
+}
+.yy_center{
+  width: 90%;
+  margin: 0 auto;
+}
+.fui-tab .item{
+  color: #E03131;
+  font-size: 30rpx;
+}
+.fui-tab.fui-tab-warning .item.active{
+  color: #FE0000;
+  border-color: #FE0000;
+  z-index: 100;
+
+}
+.yy_center_list{
+  font-size: 26rpx;
+}
+.yy_center_item{
+  margin:20rpx 40rpx;
+  padding: 10rpx 0rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #E03131;
+}
+.yy_center_tuandui{
+  text-align: center;
+  background: #E03131;
+  width: 90%;
+  margin: 0 auto;
+  color: #ffffff;
+}
+.yy_center_itemlist{
+  margin:20rpx 40rpx;
+  border-bottom: 2rpx solid #E03131;
+  padding: 10rpx 0rpx;
+  box-sizing: border-box;
+}
+.yy_center_itemlist view{
+  width: 150rpx;
+}
+.yy_center_img image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.yy_bottom{
+  font-size: 30rpx;
+}
+.yy_bottom_item{
+  background: #FE0000;
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+  color: #ffffff;
+}

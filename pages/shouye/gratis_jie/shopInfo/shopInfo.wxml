@@ -1,0 +1,69 @@
+<!--pages/shouye/gratis_jie/shopInfo/shopInfo.wxml-->
+<view class="container">
+    <swiper autoplay="{{autoplay}}" interval="2000" style="height:400rpx;">
+      <block>
+        <swiper-item>
+          <view class="">
+            <image style="width:100%;height:400rpx" src="{{info.goods.thumb}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+</view>
+<view class="w100 bg_red flex flex-c" style="color:#fff;justify-content: space-around;">
+  <text style="font-size:60rpx">￥{{info.goods.price}}</text><text style="font-size:28rpx"> 可用{{info.goods.credit}}元红包 / {{info.goods.vip_credit1}}元VIP红包</text>
+</view>
+<view class="" style="padding:20rpx;font-size:32rpx;color:#333;font-weight:600;border-bottom:2rpx solid #f0f0f0">
+  <text>{{info.goods.title}} </text>
+  <view style="font-weight:100;color:#888;font-size:28rpx;margin-top:10rpx">已售{{info.goods.joins}}份 / 剩余{{info.goods.total}}份</view>
+</view>
+<!-- <view style="font-size:32rpx;color:#888;padding:10rpx 0 0 20rpx">
+  购买记录
+</view>
+<!-- 记录列表 --
+<view style="margin-bottom:120rpx">
+  <view wx:for="{{8}}" wx:key="{{index}}" style="padding:20rpx;font-size:28rpx;color:#333" class="flex">
+    <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/wechatPay.png" style="width:80rpx;height:80rpx;border-radius:100%;background:#eee"></image>
+    <text class="flex flex-c" style="flex:1">小鱼****</text>
+    <text class="flex flex-c" style="flex:1">1份</text>
+    <text class="flex flex-c" style="flex:2">2019-12-31 15:15</text>
+  </view>
+</view> -->
+
+<Record list="{{info.log}}"></Record>
+
+<view style="margin-bottom:180rpx;height:8rpx"></view>
+
+
+<view class="exchange font14" style="background:#fff">
+  <view class="flex flex-column" style="height:100%;border-top:2rpx solid rgb(175,175,175)">
+    <view class="p10" style="height:70rpx;line-height:70rpx" >选择抵扣方式 ：</view>
+    <radio-group style="height:110rpx" class="w100 flex flex-jcsa" bindchange="radioChange">
+        <radio data-type="1" bindtap="check" class="radio" checked='{{}}'>
+          <text class="font14">抵扣红包{{info.goods.credit}}元</text>
+        </radio>
+
+        <radio data-type="2" bindtap="check" class="radio" checked='{{}}'>
+          <text class="font14">vip消费卡，抵扣{{info.goods.vip_credit1}}元</text>
+        </radio>
+    </radio-group>
+  </view>
+</view> 
+<view class="navBar flex" style="background:#fff">
+  <view style="flex:1;border:2rpx solid rgb(175,175,175)" class="flex flex-c flex-column">
+    <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/shopInfo/fx.png" style="width:60rpx;height:60rpx;"></image>
+    <text style="font-size:20rpx;color:#888;margin-top:10rpx">分享</text>
+  </view>
+  <view style="flex:1;" class="kf flex flex-c flex-column">
+    <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/shopInfo/kf.png" style="width:60rpx;height:60rpx;"></image>
+    <text style="font-size:20rpx;color:#888;margin-top:10rpx">客服</text>
+  </view>
+  <view style="flex:3; color:#fff" class="bg_red flex" bindtap="goCart">
+    <view style="flex:3;align-items:flex-end" class="flex flex-c flex-column">
+      <view style="font-size:36rpx">我要用￥25元</view>
+      <view style="font-size:28rpx">红包 / VIP 红包兑换</view>
+    </view>
+    <view class="flex flex-c" style="flex:1;font-size:64rpx">免</view>
+  </view>
+</view>
+

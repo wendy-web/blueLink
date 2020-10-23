@@ -1,0 +1,56 @@
+<view class="su_container page">
+  <view class="oy_form_image"><image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/3.png"></image></view>  
+  <view class="su_center">
+    <view class="oy_form_list flex flex-ver">
+      <view class="oy_form_title flex flex-ver">
+          <view>你的姓名：</view>
+      </view>
+      <view class="flex-1 oy_form_right flex flex-ver">
+          <input type='text' value="{{zhanghao}}" bindinput='inputname' placeholder='请输入你的真实姓名' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder" ></input>
+      </view>
+    </view>
+    <view class="oy_form_list flex flex-ver">
+      <view class="oy_form_title flex flex-ver">
+          <view>联系方式：</view>
+      </view>
+      <view class="flex-1 oy_form_right flex flex-ver">
+          <input type='tel' value="{{mobile}}" bindinput='inputmobile' placeholder='请输入你的手机号' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder" data-type='mobile'></input>
+      </view>
+    </view>
+    <view class="oy_form_list flex flex-ver">
+      <view class="oy_form_title flex flex-ver">
+          <view>提货地址：</view>
+      </view>
+      <view class="flex-1 oy_form_right flex flex-ver">
+          <input type='text' bindinput='inputChange' placeholder='点击获取详细地址' class="flex-1 oy_form_input" maxlength='11' placeholder-class="oy_placeholder" value='{{addr_detail}}'></input>
+          <view class="weui-cell__hd" bindtap="chose_location">
+            <view class="weui-pos"></view>
+          </view>
+      </view>
+    </view>
+    <view class="oy_from_upload flex flex-ver">
+      <view class="oy_form_title flex flex-ver">
+          <view>上传证件：</view>
+      </view>
+      <block wx:for="{{tempFilePaths}}" wx:for-item='item' wx:key='tempFilePaths'>
+        <image src="{{item}}"></image>
+      </block>
+      <view class="oy_form_img" bindtap="uploadImgBtn" wx:if="{{applyStatus != 1 && applyStatus != 0}}">
+        <image src="../../img/GIS-time.png"></image>
+      </view>
+    </view>
+    <view class="oy_form_checked flex flex-wrap flex-ver" wx:if="{{applyStatus != 1 && applyStatus != 0}}">
+      <checkbox-group bindchange="checkboxChange">
+        <label class="checkbox">
+          <checkbox value="请你阅读完本合同内容，并同意签约" />
+        </label>
+      </checkbox-group>
+      <text>请你阅读完本合同内容，并同意签约</text>
+    </view>
+    <block wx:if="{{applyStatus == 1 || applyStatus == 0}}">
+      <view class="oy_from_btn oy_from_btn_success" wx:if="{{applyStatus == 1}}">申请已通过</view>
+      <view class="oy_from_btn oy_from_btn_success" wx:else>待审核</view>
+    </block>
+    <view class="oy_from_btn " bindtap="shengqing" wx:else>立即申请</view>
+  </view>
+</view>

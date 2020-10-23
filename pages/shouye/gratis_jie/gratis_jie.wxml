@@ -1,0 +1,280 @@
+<scroll-view style="height:{{windowHeight}}px" scroll-y="{{true}}" bindscrolltolower="loadMore">
+<view class="hade_img">
+  <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/toux.png"></image>
+  <text>免费街</text>
+</view>
+<view class="option_ul flex flex-jcsb">
+  <view  wx:for="{{btns}}" wx:key="" class="option_li  {{index==active?'anone':''}}" data-index="{{index}}" bindtap="toggle">
+    {{item}}       
+  </view> 
+</view>
+<view class="advert_box">
+  <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/toux3.png"></image>
+</view>
+<!-- 红包兑换 -->
+<block wx:if="{{coupon==0}}">
+  <view class="goods_ul"  style="background-image: url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/beijing.png);">
+    <view style="margin-bottom:20rpx" wx:if="{{false}}">
+      <view class="flex flex-c font14" style="">
+        <view style="background:#fff;border-radius: 40rpx 0 0 40rpx; padding:8rpx 20rpx; border:2rpx solid red;margin-right:4rpx"
+        data-tabIndex = "0"
+        bindtap="tab_switch"
+              class="{{idx_switch == 0? 'tab_active' : ''}}">商品</view>
+        <view style="background:#fff;border-radius: 0 40rpx 40rpx 0; padding:8rpx 20rpx; border:2rpx solid red"
+        data-tabIndex = "1"
+        bindtap="tab_switch"
+              class="{{idx_switch == 1? 'tab_active' : ''}}">记录</view>
+      </view>
+    </view>
+    <block wx:if="{{exchangeflag}}">
+      <navigator wx:for="{{exchangeList}}" wx:key="{{index}}" url="/pages/shouye/gratis_jie/shopInfo/shopInfo?id={{item.id}}">
+        <view  class="goods_li flex flex-jcsb flex-center-align">
+          <image class="goods_img" src="{{item.thumb}}"></image>
+          <view class="right_view flex flex-col">
+            <text class="color_red">原价￥：{{item.price}}元</text>
+            <text>{{item.title}}</text>
+            <view class="color_red exchange_btn">{{item.credit}}元红包兑换</view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <block wx:if="{{!exchangeflag}}">
+      <view wx:for="{{exchangeRecord}}" wx:key="{{index}}" class="flex p10 font16" style="background:#fff">
+        <image src="{{item.thumb}}" style="width:100rpx;height:100rpx"></image>
+         <view style="flex:1;margin-left:10rpx">
+          <view>{{item.title}}</view>
+          <view class="font14">兑换积分: ￥{{item.money}}</view>
+         </view>
+         <view style="flex:1">
+          <view>兑换时间</view>
+          <view class="font14">{{item.createtime}}</view>
+         </view>     
+      </view>
+    </block>
+    <view class="til_box flex flex-col">
+      <text>团优优.健康消费平台</text>
+      <text>我们承诺：如果您购买的水果出现坏果烂果，平台根据情况进行退款换果</text>
+      <view class="service"><text>我们客服热线：020-888888888</text><text>微信客服：13333333</text></view>
+    </view>
+  </view>
+</block>
+<!-- 众券兑换 --------->
+<block wx:if="{{coupon==3}}">
+  <view class="coupon" >
+    <!-- 优惠券start -->
+    <view class="w100" style="height:640rpx;margin-top:10rpx">
+      <view class="flex" style="height:200rpx;margin: 0 20rpx">
+        <view class="w100 bg_red flex" style="flex:1;padding:10rpx;">
+          <view style="flex:1.5;color:#fff;align-items: flex-end;" class="flex flex-c flex-cloumn text-c">
+            <text style="font-size:60rpx">￥50</text>
+            <text style="font-size:28rpx">现领现用</text>
+          </view>
+          <view class="w100 flex flex-c" style="flex:1">
+            <view class="w100 flex flex-c flex-cloumn" style="height:90rpx;border:1rpx solid #eee;margin:17rpx 0 0 8rpx;font-size:24rpx;color:#fff">
+              <text>可免费</text>
+              <text>领咖啡</text>
+            </view>
+          </view>
+        </view>
+        <view class="w100 bg_red flex" style="flex:1;padding:10rpx;">
+          <view style="flex:1.5;color:#fff;align-items: flex-end;" class="flex flex-c flex-cloumn text-c">
+            <text style="font-size:60rpx">￥50</text>
+            <text style="font-size:28rpx">现领现用</text>
+          </view>
+          <view class="w100 flex flex-c" style="flex:1">
+            <view class="w100 flex flex-c flex-cloumn" style="height:90rpx;border:1rpx solid #eee;margin:17rpx 0 0 8rpx;font-size:24rpx;color:#fff">
+              <text>可免费</text>
+              <text>领咖啡</text>
+            </view>
+          </view>
+        </view>
+        <view class="w100 bg_violet flex" style="flex:1;padding:10rpx;">
+          <view style="flex:1.5;color:#fff;align-items: flex-end;" class="flex flex-c flex-cloumn text-c">
+            <text style="font-size:60rpx">￥50</text>
+            <text style="font-size:28rpx">现领现用</text>
+          </view>
+          <view class="w100 flex flex-c" style="flex:1">
+            <view class="w100 flex flex-c flex-cloumn" style="height:90rpx;border:1rpx solid #eee;margin:17rpx 0 0 8rpx;font-size:24rpx;color:#fff">
+              <text>可免费</text>
+              <text>领咖啡</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="flex" style="height:400rpx;margin:10rpx 20rpx 20rpx">
+        <view class="w100 bg_orange flex flex-c flex-cloumn" style="flex:1;color:#fff">
+          <view class="w100" style="font-size:54rpx">￥</view>
+          <text style="font-size:110rpx">100</text>
+          <text style="font-size:45rpx">满288减</text>
+          <view style="width:50%;font-size:22rpx;text-align:center;color:rgb(255,162,0);background:#fff">现领现用</view>
+          <view style="font-size:26rpx">仅限2019.04.22</view>
+        </view>
+        
+        
+        <view class="w100 bg_yellow flex flex-c flex-cloumn" style="flex:1;color:red">
+          <view class="w100" style="font-size:54rpx">￥</view>
+          <text style="font-size:110rpx">100</text>
+          <text style="font-size:45rpx">满288减</text>
+          <view style="width:50%;font-size:22rpx;text-align:center;color:rgb(249,255,1);background:red">现领现用</view>
+          <view style="font-size:26rpx">仅限2019.04.22</view>
+        </view>
+        <view class="w100 bg_orange flex flex-c flex-cloumn" style="flex:1;color:#fff">
+          <view class="w100" style="font-size:54rpx">￥</view>
+          <text style="font-size:110rpx">100</text>
+          <text style="font-size:45rpx">满288减</text>
+          <view style="width:50%;font-size:22rpx;text-align:center;color:rgb(255,162,0);background:#fff">现领现用</view>
+          <view style="font-size:26rpx">仅限2019.04.22</view>
+        </view>
+      </view>
+    </view>
+    <!-- 优惠券end -->
+    
+    
+    <view>
+      <view class="list_item flex flex-jcsb flex-center-align" style="background-image: url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/quan.png">
+        <view class="list_left">
+          <text class="font_size60">￥</text>
+          <text class="font_size140">50</text>
+        </view>
+        <view class="list_rigth flex flex-col">
+          <text>适用范围：某某某</text>
+          <text>有效期至：2019-11-6</text>
+          <text>优惠券来源：星巴克用户专享受</text>
+          <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/xuanzle.png"></image>
+        </view>
+      </view>
+      <view class="list_item flex flex-jcsb flex-center-align" style="background-image: url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/quan.png">
+        <view class="list_left">
+          <text class="font_size60">￥</text>
+          <text class="font_size140">50</text>
+        </view>
+        <view class="list_rigth flex flex-col">
+          <text>适用范围：某某某</text>
+          <text>有效期至：2019-11-6</text>
+          <text>优惠券来源：星巴克用户专享受</text>
+          <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/xuanzle.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<!-- 零元秒杀 -->
+<block wx:if="{{coupon==1}}">
+  <view class="goods_ul" style="background-image: url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/beijing.png);">
+    <view style="margin-bottom:20rpx" wx:if="{{false}}">
+      <view class="flex flex-c font14" style="">
+        <view style="background:#fff;border-radius: 40rpx 0 0 40rpx; padding:8rpx 20rpx; border:2rpx solid red;margin-right:4rpx"
+        data-tabIndex = "0"
+        bindtap="tab_switch_lyms"
+              class="{{idx_switch_lyms == 0? 'tab_active' : ''}}">商品</view>
+        <view style="background:#fff;border-radius: 0 40rpx 40rpx 0; padding:8rpx 20rpx; border:2rpx solid red"
+        data-tabIndex = "1"
+        bindtap="tab_switch_lyms"
+              class="{{idx_switch_lyms == 1? 'tab_active' : ''}}">记录</view>
+      </view>
+    </view>
+    <block wx:if="{{lymsFlag}}">
+      <block wx:for="{{lymsList}}" wx:key="{{index}}">
+      <navigator url="/pages/shouye/gratis_jie/bargain/bargain?id={{item.id}}">  
+        <view class="goods_li flex flex-jcsb flex-center-align">
+          <image class="goods_img" src="{{item.images}}"></image>
+          <view class="right_view flex flex-col">
+            <text class="color_red">原价￥：{{item.start_price}}元</text>
+            <text>{{item.title}}</text>
+            <navigator url="/pages/shouye/gratis_jie/bargain/bargain?id={{item.id}}">  
+              <view class="color_red exchange_btn" >去团杀</view>  
+            </navigator>
+          </view>
+        </view>
+      </navigator>
+      </block>
+    </block>
+    <block wx:if="{{!lymsFlag}}">
+      <view bindtap="viewrecord" data-id="{{item.id}}" data-nowPrice="{{item.now_price}}" wx:for="{{lymsRecordList}}" wx:key="{{index}}" class="flex p10 font16" style="background:#fff">
+        <image src="{{item.images}}" style="width:100rpx;height:100rpx"></image>
+          <view style="flex:1;margin-left:10rpx">
+            <view>{{item.title}}</view>
+            <view class="font14">当前价格: ￥{{item.now_price}}</view>
+          </view>
+          <view style="flex:1">
+            <view>结束时间</view>
+            <view class="font14">{{item.end_time}}</view>
+          </view>     
+        </view>
+    </block>
+    
+    <view class="til_box flex flex-col">
+      <text>团优优.健康消费平台</text>
+      <text>我们承诺：如果您购买的水果出现坏果烂果，平台根据情况进行退款换果</text>
+      <view class="service"><text>我们客服热线：020-888888888</text><text>微信客服：13333333</text></view>
+    </view>
+  </view>
+</block>
+<!-- 一带一免单 -->
+<block wx:if="{{coupon==2}}">
+<view class="goods_ul"  style="background-image: url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/beijing.png);">
+    <view style="margin-bottom:20rpx" wx:if="{{false}}">
+      <view class="flex flex-c font14" style="">
+        <view style="background:#fff;border-radius: 40rpx 0 0 40rpx; padding:8rpx 20rpx; border:2rpx solid red;margin-right:4rpx"
+        data-tabIndex = "0"
+        bindtap="tab_switch_yde"
+              class="{{idx_switch_yde == 0? 'tab_active' : ''}}">商品</view>
+        <view style="background:#fff;border-radius: 0 40rpx 40rpx 0; padding:8rpx 20rpx; border:2rpx solid red"
+        data-tabIndex = "1"
+        bindtap="tab_switch_yde"
+              class="{{idx_switch_yde == 1? 'tab_active' : ''}}">记录</view>
+      </view>
+    </view>
+    <block wx:if="{{ydeFlag}}">
+      <navigator wx:for="{{ydeList}}" :key="{{index}}" url="/pages/shouye/gratis_jie/free/free?id={{item.id}}">
+        <view class="goods_li flex flex-jcsb flex-center-align">
+          <image class="goods_img" src="{{item.thumb}}"></image>
+          <view class="right_view flex flex-col">
+            <text class="color_red">原价￥：{{item.marketprice}}元</text>
+            <text>{{item.title}}</text>
+            <view class="color_red exchange_btn">我要免单 购</view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <block wx:if="{{!ydeFlag}}">
+      <view bindtap="gotoRecord" data-price="{{item.price}}" data-status="{{item.status}}" data-takeId="{{item.id}}" wx:for="{{ydeRecordList}}" wx:key="{{index}}" class="flex p10 font16" style="background:#fff">
+        <image src="{{item.thumb}}" style="width:100rpx;height:100rpx"></image>
+        <view style="flex:1;margin-left:10rpx">
+          <view>{{item.title}}</view>
+          <view class="font14">当前价格: ￥{{item.price}}</view>
+        </view>
+        <view style="flex:1">
+          <view wx:if="{{item.status==0}}">进行中</view>
+          <view wx:if="{{item.status==1}}">可领取</view>
+          <view wx:if="{{item.status==2}}">已领取</view>
+          <view class="font14">{{item.createtime}}</view>
+        </view>     
+      </view>
+    </block>
+  <!-- <navigator url="/pages/shouye/gratis_jie/free/free">
+    <view class="goods_li flex flex-jcsb flex-center-align">
+      <image class="goods_img" src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/beijing1.png"></image>
+      <view class="right_view flex flex-col">
+        <text class="color_red">原价￥：25元</text>
+        <text>某某某商品</text>
+        <view class="color_red exchange_btn">我要免单 购</view>
+      </view>
+    </view>
+  </navigator> -->
+  <view class="til_box flex flex-col">
+    <text>团优优.健康消费平台</text>
+    <text>我们承诺：如果您购买的水果出现坏果烂果，平台根据情况进行退款换果</text>
+    <view class="service"><text>我们客服热线：020-888888888</text><text>微信客服：13333333</text></view>
+  </view>
+</view>
+</block>
+</scroll-view>
+
+
+
+
+
+
+
+

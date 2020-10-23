@@ -1,0 +1,262 @@
+.fui-cell-group .fui-cell .fui-input.money { font-size: 45rpx; }
+page{
+  background: #fff!important;
+}
+.oy_form_list{
+    /* height:100rpx; */
+    width: 90%;
+    margin: 0 auto;
+    border-top: 1px solid #999;
+}
+.youjinDetail{
+  border-top: 1px solid #999;
+}
+.oy_form_pointer{
+    color:#ff5233;
+    font-size: 38rpx;
+    margin-right:8rpx;
+}
+.oy_form_title{
+    color:#000;
+    font-size: 30rpx;
+    width:190rpx;
+    height:90rpx;
+}
+.oy_form_right{
+    height:90rpx;
+}
+.oy_form_input{
+    height:100%;
+    font-size:30rpx;
+    color:#000;
+}
+.oy_tel_btn{
+    color:#fa5757;
+    border:1px solid #fa5757;
+    padding:14rpx;
+    font-size:30rpx;
+    border-radius: 10rpx;
+}
+.oy_placeholder{
+    color:#b3b3b3;
+    font-size: 30rpx;
+}
+.oy_tel_box{
+    padding:20rpx 64rpx;
+    height:90rpx;
+    font-size: 36rpx;
+    font-weight: bold;
+}
+page{
+    background-color: #eff1f6;
+}
+.oy_form_list{
+    /* height:110rpx; */
+    background-color: #fff;
+    /* margin-top:22rpx; */
+}
+.oy_nav_box{
+     color:#b3b3b3;
+    height:100%;
+}
+.oy_nav_box image{
+    width:42rpx;
+    height:42rpx;
+}
+.picker.oy_placeholder{
+    color:#000;
+}
+.oy_h100{
+    height:100%;
+}
+.oy_h110{
+    height:90rpx;
+}
+.oy_tel_box{
+    padding-top:90rpx;
+}
+.oy_picker{
+    
+    font-size:30rpx;
+}
+
+.oy_list_fotter{
+    background-color: #fff;
+    /* margin-top:22rpx; */
+    padding: 0rpx 40rpx;
+}
+.oy_list_fotter_title{
+    font-size:30rpx;
+    padding: 20rpx 0rpx;
+    box-sizing: border-box;
+
+}
+.oy_money_list{
+    font-size: 40rpx;
+    border-bottom: 1px solid #eff1f6;
+    margin:20rpx 0;
+    padding-bottom: 5px;
+}
+.oy_money_input{
+    margin-left:10rpx;
+    font-size: 40rpx;
+    color:#000;
+    
+}
+.oy_money_btn{
+    color:#FE0000;
+    font-size:30rpx;
+}
+.oy_money_btn image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.oy-cell-title{
+    color:#000;
+    font-size:30rpx;
+    padding-left:0;
+}
+.oy_small_title{
+    margin-left:10rpx;
+    font-size: 24rpx;
+    color:#000;
+}
+.oy_btn{
+  background: #FE0000!important;
+}
+input::-webkit-input-placeholder {
+    opacity:0.5;
+}
+
+.hs_top_center{
+  background: #FE0000;
+  color: #ffffff;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+.Withdrawal{
+  padding: 30rpx 40rpx 0rpx 40rpx;
+  background: #fff;
+  border-radius: 30rpx 30rpx 0 0;
+  font-size: 30rpx;
+  overflow: hidden;
+  position: relative;
+  top: -20rpx;
+}
+.Withdrawal>view:first-child{
+  border-right: 1px solid darkgray;
+}
+.Withdrawal span{
+  font-size: 35rpx;
+  color: red;
+}
+.Withdrawal .detail{
+  width: 40%;
+}
+.Withdrawal .detail p{
+   display: block;
+   text-align: right;
+}
+.Withdrawal image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.hs_top_jine{
+  text-align: center;
+  padding: 0 20rpx;
+  margin-bottom: 40rpx;
+  border: 1px dashed #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+.hs_top_jine>view{
+  font-size: 45rpx;
+}
+.hs_top_jine>text{
+  font-size: 26rpx;
+}
+.hs_top_liang{
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+}
+.hs_top_liang>view{
+  border: 1px dashed #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  padding: 10rpx 20rpx;
+}
+.hs_center_bg{
+  width: 90%;
+  margin: 0 auto;
+}
+.hs_center_jine{
+  width: 100%;
+  padding: 40rpx 20rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  border-bottom: 4rpx solid #999;
+}
+.hs_center_tixian{
+  border-right: 4rpx solid #999;
+}
+.hs_center_shuru{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.hs_center_shuru>input{
+  /* width: 200rpx; */
+  font-size:26rpx;
+}
+.hs_center_shuru>text{
+  font-size: 34rpx;
+  color: #FE0000;
+}
+.hs_strong{
+  font-weight: 600;
+  padding-bottom: 10rpx;
+}
+.hs_rgb0{
+  color: #999;
+}
+.hs_center_tifangshi{
+  font-size: 30rpx;
+}
+.hs_center_tifangshi>view{
+  border-bottom: 2rpx solid rgba(0, 0, 0, 0.1);
+  height: 60rpx;
+  line-height: 60rpx;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.hs_center_tifangshi>view>input{
+  font-weight: 500;
+}
+.hs_center_yongjin{
+  font-size: 30rpx;
+  /* height: 60rpx;
+  line-height: 60rpx; */
+  padding: 30rpx;
+  box-sizing: border-box;
+  font-weight: 600;
+  
+}
+.hs_btn_tixina{
+  width: 90%;
+  margin: 40rpx auto;
+  border-radius: 10rpx;
+  background: #FE0000;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.hs_active{
+  border-bottom: 4rpx solid #000000;
+}
+
+
+

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "邀请拼单",
+  "navigationBarBackgroundColor": "#FE0000",
+  "usingComponents": {
+    "SuccessPay" : "/component/SuccessPay/SuccessPay"
+  }
+}

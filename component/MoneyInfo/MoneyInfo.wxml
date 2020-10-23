@@ -1,0 +1,16 @@
+<!--component/MoneyInfo/MoneyInfo.wxml-->
+
+<!-- 支付金额信息 -->
+<view class="flex p10 font16" style="height:160rpx;color:#888;border-top:4rpx solid rgb(247,247,247)">
+  <view style="flex:2;border-right:2rpx solid #ccc" class="flex flex-cloumn">
+    <text>商品金额</text>
+    <text style="margin-top:10rpx">运费</text>
+  </view>
+  <view style="flex:1" class="font14 text-c">
+    <!-- <view>25元红包兑品</view> -->
+    <view>￥{{money}}</view>
+    <view wx:if="{{}}">￥{{freight}}</view>
+    <view class="font16" style="font-weight:600">合计：￥{{money + freight}}</view>
+  </view>
+</view>
+<!-- 支付金额信息结束 -->

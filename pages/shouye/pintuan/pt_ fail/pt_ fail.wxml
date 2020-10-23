@@ -1,0 +1,78 @@
+<!--pages/shouye/pintuan/pt_ fail/pt_ fail.wxml-->
+<view class="bg_red flex " style="color:#fff;padding:40rpx 20rpx 60rpx">
+  <view style="flex:2">
+    <view class="font18">很抱歉！此次开团失败</view>
+    <view class="font16">加油！你可以重新发起拼团</view>
+  </view>
+  <view style="flex:1">
+    <view style="width:140rpx;height:90rpx">
+      <image style="width:100%;height:100%" src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/time.png"></image>
+    </view>
+  </view>
+</view>
+<view class="p10 flex font14">
+  <view style="width:80%;font-weight:600">
+    <view>收货人： {{info.myorder.address.realname}}  {{info.myorder.address.mobile}}</view>
+    <view>收货地址： {{info.myorder.address.province}}{{info.myorder.address.city}}{{info.myorder.address.area}}{{info.myorder.address.address}}</view>
+  </view>
+  <!-- <view style="width:20%" class="flex flex-jcsb flex-column">
+    <view style="color:red;border:2rpx solid #ccc;padding:4rpx 16rpx">修改</view>
+    <view style="background:red;color:#fff;padding:4rpx 16rpx">确认</view>
+  </view> -->
+</view>
+<view class="p10" style="border-top:20rpx solid rgb(242,242,242)">
+  <view class="flex flex-jcfs">
+    <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/ptcg.png" style="width:70rpx;height:50rpx;"></image>
+    <text style="font-size:32rpx;font-weight:600;color:#333;margin-left:30rpx">拼团失败</text>
+  </view>
+  <view class="flex" style="border-bottom:2rpx solid rgb(242,242,242)">
+    <view class="flex" style="flex:1">
+      <view wx:for="{{info.orders}}" wx:key="{{index}}" class="flex flex-c" style="width:160rpx;height:160rpx;position: relative;margin-right:-40rpx;">
+        <view class="flex flex-c" style="width:100rpx;height:100rpx;border:2rpx dashed rgb(248,172,53);border-radius:100%">
+          <image style="border-radius:100%" src="{{item.avatar}}"></image>
+          <!-- <text>?</text> -->
+        </view>
+        <text wx:if="{{item.heads==1? true : false}}" class="font14 flex flex-c" style="background: rgb(248,172,53);position:absolute;top:16rpx;left:18rpx;border-radius:20rpx;border:2rpx silde #fff;padding:0 8rpx;color:rgb(170,117,8)">拼主</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="p10">
+  <view class="font16" style="color:#999;margin-bottom:16rpx">商品订单详情</view>
+  <view class="flex">
+    <image src="{{info.goods.thumb}}" style="width:160rpx;height:160rpx;border:2rpx solid red"></image>
+    <view class="flex flex-column" style="flex:2; margin-left:10rpx;">
+      <view class="text-hide">{{info.goods.title}}</view>
+      <view class="font14 text-hide" style="color:#888;margin-top:20rpx">{{info.goods.description}}</view>
+    </view>
+    <view style="flex:1;color:#888;text-align:right" class="font16">
+      <view>￥{{info.myorder.price}}</view>
+      <view style="margin-top:20rpx">X {{info.myorder.groupnum}}</view>
+    </view>
+  </view>
+  <view style="margin-top:20rpx;text-align:right;color:#888" class="font16 flex flex-jcsb">
+    <view>商品金额</view>
+    <view><text style="" class="font18">￥{{info.myorder.realprice}}</text></view>
+  </view>
+  <view style="margin-top:10rpx;text-align:right;" class="font16 flex flex-jcsb">
+    <view style="color:#888">运费</view>
+    <view style="color:#888">￥ {{info.myorder.freight}}<text wx:if="{{info.myorder.freight=='0.00'}}" style=""> 免运费</text></view>
+  </view>
+  <view style="margin-top:10rpx;text-align:right;" class="font16">
+    合计：<text class="font22" style="color:red">￥{{allPrice}}</text>
+  </view>
+</view>
+
+<view style="margin:60rpx 80rpx 160rpx;border: 2rpx dashed #ccc;color:#888;" class="p10 font14">
+  <view>注：</view>
+  <view>1、想单买，无须付款，点击继续单买即可</view>
+  <view>2、可以继续开团，重新邀请新朋友参团</view>
+  <view>3、如果不想购买此产品，可以申请退款</view>
+</view>
+
+<view class="flex navPay font16">
+  <view style="flex:1;color:#888;" class="flex flex-column flex-c"><text>已付</text><text>￥{{allPrice}}元</text></view>
+  <view style="flex:1;color:#fff;border-right:4rpx solid #fff" class="flex flex-c bg_red" bindtap="buyGroup">继续开团</view>
+  <view style="flex:1;color:#fff;border-right:4rpx solid #fff" class="flex flex-c bg_red" bindtap="buycontinue">继续单买</view>
+  <view style="flex:1;;color:#fff;" class="flex flex-c bg_red" bindtap="refund">申请退款</view>
+</view>

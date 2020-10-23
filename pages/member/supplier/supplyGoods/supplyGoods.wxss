@@ -1,0 +1,161 @@
+/* pages/member/supplier/supplyGoods/supplyGoods.wxss */
+.w100{
+  width: 100%;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.flex{
+  display: flex;
+}
+.flex-cloumn{
+  flex-direction: column;
+}
+.flex-c{
+  justify-content: center;
+  align-items: center;
+}
+.flex-jcfs{
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex-jcsb{
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-jcfe{
+  justify-content: flex-end;
+  align-items: center;
+}
+.flex-warp{
+  flex-wrap: wrap;
+}
+.text-c{
+  text-align: center
+}
+.p10{
+  padding: 20rpx;
+}
+.bg_red{
+  background: red;
+}
+.textOver{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.font12{
+  font-size: 24rpx
+}
+.font14{
+  font-size: 28rpx;
+}
+.font16{
+  font-size: 32rpx;
+}
+.font18{
+  font-size: 36rpx;
+}
+.font20{
+  font-size: 40rpx;
+}
+.font22{
+  font-size: 44rpx;
+}
+.font30{
+  font-size: 60rpx;
+}
+
+
+.payNav{
+  width: 100%;
+  height: 110rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-top: 2rpx solid #888;
+}
+.goods-detail-info{
+  margin-bottom: 110rpx;
+}
+
+
+.cover_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.buy_box {
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding: 10rpx 20rpx 0rpx;
+  /* overflow: hidden; */
+}
+
+.optinsBox{
+  position: relative;
+
+}
+.imgBox{
+  width: 180rpx;
+  height: 180rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 8rpx;
+  position: absolute;
+  top: -50rpx;
+  background: #fff;
+}
+.shopOption{
+  color: #333;
+  background: rgb(186,186,186);
+  /* width: 29%; */
+  text-align: center;
+  padding:4rpx 16rpx;
+  border-radius: 8rpx;
+  margin:8rpx 20rpx 8rpx 0;
+}
+.shopWeight{
+  color: #333;
+  background: rgb(186,186,186);
+  width: 48%;
+  text-align: center;
+  padding:4rpx 6rpx;
+  border-radius: 8rpx;
+  margin:8rpx 2rpx 8rpx 0;
+}
+
+.trueBtn{
+  height: 80rpx;
+  margin:0 auto;
+  background: red;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+}
+.fontWarp{
+  white-space: nowrap;  
+
+ text-overflow:ellipsis; 
+
+ overflow:hidden;
+}
+
+.active{
+  background: red;
+  color: #fff;
+}

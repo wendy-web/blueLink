@@ -1,0 +1,22 @@
+
+<view class="hs_container">
+  <scroll-view  scroll-y  style="height: {{height?height+'px':'auto'}}"
+   bindscrolltolower="lower" bindscroll="scroll" >
+    <view class="hs_item"  wx:for="{{lists}}" wx:for-index="idx" wx:for-item="item" wx:key="*this">
+      <view class="hs_qinadao">
+        <view>{{item.remarks?item.remarks:'未知红包'}}</view>
+          <view>
+            <text class="hs_richang">
+              <block wx:if="{{status=='1'&&vip !='1'}}">可用红包</block>
+              <block wx:if="{{status=='0'&&vip !='1'}}">已用红包</block>
+              <block wx:if="{{status=='1'&&vip=='1'}}">可用VIP红包</block>
+              <block wx:if="{{status=='0'&&vip=='1'}}">已用VIP红包</block>
+            </text>
+            <text>{{item.createtime}}</text> 
+          </view>
+      </view>
+      <view class="hs_num">+{{item.num}}</view>
+    </view>
+    <view class='hs_nolist' wx:if="{{scrollend}}">没有数据了！</view>
+  </scroll-view>
+</view>

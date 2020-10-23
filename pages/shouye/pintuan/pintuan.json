@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "产品详情",
+  "navigationBarBackgroundColor": "#FF7F8E",
+  "usingComponents": {
+    "Record": "/component/Record/Record",
+    "PayNav": "/component/PayNav/PayNav"
+  }
+}

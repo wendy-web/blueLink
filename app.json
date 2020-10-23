@@ -1,0 +1,148 @@
+{
+  "debug": false,
+  "pages": [
+    "pages/shouye/index/index",
+    "pages/member/service/service",
+    "pages/member/serviceDetail/serviceDetail",
+    "pages/member/index/index",
+    "pages/member/info/index",
+    "pages/member/bind/index",
+    "pages/member/favorite/index",
+    "pages/member/history/index",
+    "pages/member/recharge/index",
+    "pages/member/withdraw/index",
+    "pages/member/log/index",
+    "pages/member/address/index",
+    "pages/member/address/post",
+    "pages/member/address/select",
+    "pages/member/cart/index",
+    "pages/member/calendar/index",
+    "pages/member/detailRecords/index",
+    "pages/public/coupon/index",
+    "pages/message/auth/index",
+    "pages/web/index",
+    "pages/goods/index/index",
+    "pages/goods/region/index",
+    "pages/goods/detail/index",
+    "pages/goods/poster/index",
+    "pages/member/mygroup/index",
+    "pages/member/yingyee/index",
+    "pages/member/redpackyue/index",
+    "pages/member/partner/index",
+    "pages/member/supplier/index",
+    "pages/member/shitidian/index",
+    "pages/member/yunying/index",
+    "pages/member/fengongsi/index",
+    "pages/member/ziyou/index",
+    "pages/member/hongbaoee/index",
+    "pages/member/myyunying/index",
+    "pages/member/mychengxing/index",
+    "pages/member/fenxiang/index",
+    "pages/shouye/gratis_jie/gratis_jie",
+    "pages/shouye/gratis_jie/shopInfo/shopInfo",
+    "pages/shouye/gratis_jie/order/order",
+    "pages/shouye/gratis_jie/order/successPay/successPay",
+    "pages/shouye/gratis_jie/bargain/bargain",
+    "pages/shouye/gratis_jie/free/free",
+    "pages/shouye/gratis_jie/free/invitation/invitation",
+    "pages/shouye/pintuan/pintuan",
+    "component/PayNav/PayNav",
+    "pages/shouye/pintuan/ptOrder/ptOrder",
+    "pages/shouye/pintuan/pt_invitation/py_invitation",
+    "pages/shouye/pintuan/pt_success/pt_success",
+    "pages/shouye/pick_up_point/pick_up_point",
+    "pages/shouye/pintuan/pintuanShare/pintuanShare",
+    "pages/paihang/index",
+    "pages/shouye/vipka/index",
+    "pages/shouye/shop_list/index",
+    "pages/shouye/richang/index",
+    "pages/wailian/index",
+    "pages/member/mingxi/index",
+    "pages/member/yuemingxi/index",
+    "pages/order/index",
+    "pages/order/detail/index",
+    "pages/order/express/index",
+    "pages/order/comment/index",
+    "pages/order/refund/index",
+    "pages/order/create/index",
+    "pages/order/store/index",
+    "pages/order/store/map",
+    "pages/order/pay/index",
+    "pages/order/pay/peerpay",
+    "pages/order/pay/peerpayshare",
+    "pages/order/pay/peerpaydetail",
+    "pages/shouye/pintuan/pt_more/pt_more",
+    "pages/member/supplier/supplyGoods/supplyGoods",
+    "pages/groups/refund/index",
+    "pages/shouye/pintuan/ptOrderList/ptOrderList",
+    "pages/shouye/pintuan/alone_order/alone_order",
+    "pages/shouye/gratis_jie/bargain/bargainOrder/bargainOrder",
+    "pages/shouye/gratis_jie/bargain/helpBargain/helpBargain",
+    "pages/shouye/gratis_jie/free/freeOrder/freeOrder",
+    "pages/member/supplier/gouwuche/index",
+    "pages/member/supplier/suOrder/index",
+    "pages/member/supplier/dingdanzhifu/index",
+    "pages/member/supplier/xiangqing/index",
+    "pages/member/jinhuo/index",
+    "pages/member/supplier/shenqingtuikuan/index",
+    "pages/shouye/liebiao/index",
+    "pages/shouye/gratis_jie/free/successful/successful",
+    "pages/shouye/huo_dong_dian/index"
+  ],
+  "global": {
+    "window": {
+      "backgroundColor": "#fafafa",
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#000",
+      "navigationBarTextStyle": "white"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序获取最近提货点的地理位置信息"
+    }
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#ff0011",
+    "list": [
+      {
+        "pagePath": "pages/shouye/index/index",
+        "text": "首页",
+        "iconPath": "/static/images/icon/home.png",
+        "selectedIconPath": "/static/images/icon-red/home.png"
+      },
+      {
+        "pagePath": "pages/member/fenxiang/index",
+        "text": "分享赚钱",
+        "iconPath": "/static/images/icon/cate.png",
+        "selectedIconPath": "/static/images/icon-red/cate.png"
+      },
+      {
+        "pagePath": "pages/paihang/index",
+        "text": "排行榜",
+        "iconPath": "/static/images/icon/cate.png",
+        "selectedIconPath": "/static/images/icon-red/cate.png"
+      },
+      {
+        "pagePath": "pages/member/cart/index",
+        "text": "购物车",
+        "iconPath": "/static/images/icon/cart.png",
+        "selectedIconPath": "/static/images/icon-red/cart.png"
+      },
+      {
+        "pagePath": "pages/member/index/index",
+        "text": "会员中心",
+        "iconPath": "/static/images/icon/people.png",
+        "selectedIconPath": "/static/images/icon-red/people.png"
+      }
+    ]
+  },
+  "plugins": {
+    "calendar": {
+      "version": "1.1.3",
+      "provider": "wx92c68dae5a8bb046"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

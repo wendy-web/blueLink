@@ -1,0 +1,97 @@
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+  <view class="hs_center_top flex flex-col flex-center ">
+    <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/tuandui.png"></image>
+    <text>我的运营中心</text>
+  </view>
+  <view class='page navbar com-down'>
+    <view class='fui-tab fui-tab-warning yy_center'>
+      <block > 
+        <view bindtap='myTab' class='item {{level == "1"?"active":""}}' data-level='1'>一级成员</view>
+        <view bindtap='myTab' class='item {{level == "2"?"active":""}}' data-level='2'>二级成员</view>
+        <view bindtap='myTab' class='item {{level == "tuidui"?"active":""}}' data-level='tuidui'>团队成员</view>
+      </block> 
+    </view>
+    <block wx:if="{{level==1||level==2}}">
+      <view class="yy_center_list">
+        <view class="yy_center_item flex flex-center flex-jcsp">
+          <view>头像</view>
+          <view>ID号</view>
+          <view>级别</view>
+          <view>姓名</view>
+          <view>注册时间</view>
+        </view>
+        <view class="yy_center_tuandui"  wx:if="{{level==1}}">我的一级团队成员</view>
+        <view class="yy_center_tuandui"  wx:if="{{level==2}}">我的二级团队成员</view>
+        <view class='fui-list-group'>
+          <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key="list">
+            <view class="yy_center_itemlist flex flex-center flex-jcsp">
+              <view class="yy_center_img"><image src="{{item.avatar}}"></image></view>
+              <view>{{item.id}}</view>
+              <view>{{item.level_title }}</view>
+              <view>{{item.nickname}}</view>
+              <view>{{item.createtime}}</view>
+            </view>
+          </block>
+        </view>
+        <block wx:if='{{loading}}'>
+          <view class='fui-loading'>
+            <view class='icon'></view>
+            <view class='text'>正在加载</view>
+          </view>
+        </block>
+        <block wx:if='{{loaded && list.length > 0}}'>
+          <view class='fui-loading empty'>
+            <view class='text'>没有更多了</view>
+          </view>
+        </block>
+        <block wx:if='{{total <= 0 && !loading}}'>
+          <view class='fui-loading empty'>
+            <view class='text'>没有数据</view>
+          </view>
+        </block>
+      </view>
+    </block>
+    <block wx:if="{{level == 'tuidui'}}">
+      <view class="yy_center_list">
+        <view class="yy_center_item flex flex-center flex-jcsp">
+          <view>头像</view>
+          <view>ID号</view>
+          <view>级别</view>
+          <view>姓名</view>
+          <view>注册时间</view>
+        </view>
+        <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key="list">
+          <view class="yy_center_itemlist yy_center_red  flex flex-center flex-jcsp">
+            <view class="yy_center_img"><image src="{{item.avatar}}"></image></view>
+            <view>
+              <!-- <view>下线团长</view> -->
+              <view>{{item.id}}</view>  
+            </view>
+            <view>{{item.level_title }}</view>
+            <view>{{item.nickname }}</view>
+            <view>{{item.createtime }}</view>
+          </view>             
+        </block>
+        <block wx:if='{{loading}}'>
+          <view class='fui-loading'>
+            <view class='icon'></view>
+            <view class='text'>正在加载</view>
+          </view>
+        </block>
+        <block wx:if='{{loaded && list.length > 0}}'>
+          <view class='fui-loading empty'>
+            <view class='text'>没有更多了</view>
+          </view>
+        </block>
+        <block wx:if='{{total <= 0 && !loading}}'>
+          <view class='fui-loading empty'>
+            <view class='text'>没有数据</view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</block>

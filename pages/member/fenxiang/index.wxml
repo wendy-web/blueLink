@@ -1,0 +1,169 @@
+<view class="su_container page">
+  <view class="su_top_image"><image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/fenxiangtoubu.png"></image> </view>
+  <view class="su_tab flex flex-wrap flex-center flex-ver ">
+    <view bindtap='myTab' class='item item_left {{cate == ""?"active":""}}' data-cate=''>一键分享</view>
+    <view bindtap='myTab' class='item {{cate == "shop"?"active":""}}' data-cate='shop'>二维码海报分享</view>
+    <view bindtap='myTab' class='item {{cate == "shiti"?"active":""}}' data-cate='shiti'>视频/图片</view>
+    <view bindtap='myTab' class='item item_right {{cate == "shangchuan"?"active":""}}' data-cate='shangchuan'>我要上传</view>
+  </view>
+  <!-- 一键分享 -->
+  <block wx:if='{{cate == ""}}'>
+    <view class="su_center">
+      <view class="su_center_image">
+        <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/biaotibeijing.png"></image>
+        <view class="su_center_text_cen">
+          <view class="su_center_text_top">朋友圈如何，让你月入过万</view>
+          <view class="su_center_text_bottom">一键分享到朋友圈，简单分享无限的收益</view>
+        </view>
+      </view> 
+      <view class="su_center_container flex flex-wrap">   
+        <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key="list">
+          <view class="su_center_neirong flex ">
+            <view class="su_neirong_image"><image src="{{item.avatar|| '/static/images/noface.png'}}"></image></view>
+            <view>
+              <view>{{item.title}}</view>
+              <view>{{item.content}}</view>
+              <view class="su_shangpin"><image src="{{item.images}}"></image></view>
+            </view>
+            <view class="su_fengxiang" bindtap='showShare'>我要分享到好友</view>
+          </view>
+        </block>
+      </view> 
+    </view>
+  </block>
+  <!-- 海报分享 --> 
+  <block wx:if='{{cate == "shop"}}'> 
+    <view class="su_center_haibao" style="background-image:url({{image}})">
+      <view class="su_center_swiper flex ">
+        <block wx:for="{{background}}" wx:for-item='item' wx:key='background'>
+          <view class="su_center_image" bindtap="eventTap" data-img="{{item.images}}"><image src="{{item.images}}"></image></view>
+        </block>
+      </view>
+    </view>
+    <view class="zuishaoh">
+      <block wx:for="{{ako}}"> 
+        <poster hide-loading="{{false}}" preload="{{false}}" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+          <button>生成海报</button>
+        </poster>
+      </block>
+      <button bindtap="baocun">保存图片</button>
+    </view>
+    <!-- <button bindtap="genghuan">更换背景</button> -->
+  </block>
+
+  <!-- 分享的图片和视频 -->
+  <block wx:if='{{cate == "shiti"}}'>
+    <view class="su_center_shipin">
+      <view class="su_center_shipin_text">一、分享视频</view>
+      <view class="su_center_shipin_container flex flex-wrap">
+        <block wx:for="{{share_videos}}" wx:for-item="item" wx:key="share_videos">
+          <view class="su_center_shipin_tu">
+            <view class="su_center_shipin_image">
+              <video src="{{item.video}}"></video>
+              <view class="su_center_shipin_wenzi" bindtap="shareVideoHandle" data-video="{{item.video}}">分享视频</view>
+            </view> 
+          </view>       
+        </block>
+      </view>
+      <view class="su_center_shipin_text">二、分享图片</view>
+      <view class="su_center_shipin_container flex flex-wrap flex-jcsb ">
+        <block wx:for="{{share_images}}" wx:for-item="item" wx:key="share_images">
+          <view class="su_center_shipin_tupian">
+            <view class="su_center_shipin_image">
+              <image src="{{item.images}}"></image>
+              <view class="su_center_shipin_wenzi">分享图片</view>
+            </view> 
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <!-- 我要上传 -->
+  <block wx:if='{{cate == "shangchuan"}}'>
+    <view class="su_center_shipin">
+      <view class="su_center_shipin_text">一、分享体验反馈视频/图片<text class="su_center_red">（只能单次上传视频/图片）</text>  </view>
+      <view class="su_center_shipin_container flex flex-wrap flex-start ">
+        <block wx:for="{{tempFilePaths}}" wx:for-item='item' wx:key='tempFilePaths'>
+          <!-- <input type="text" name="images" value="{{item}}" style='display:none;' /> -->
+            <view class="su_center_shipin_tu" wx:if="{{hs_btnshow}}">
+              <view class="su_center_shipin_image">
+                <image src="{{item}}"></image>
+                <view class="su_center_shipin_wenzi">分享图片</view>
+              </view> 
+            </view>
+            <view class="su_center_shipin_tu"  wx:else>
+              <view class="su_center_shipin_image">
+                <video src='{{item}}'  controls ></video>
+                <view class="su_center_shipin_wenzi">分享视频</view>
+              </view> 
+            </view>
+        </block>
+      </view>
+      <view class="su_center_shangchuang" bindtap="uploadBtn">
+        <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/shangchuan.png"></image>
+      </view>
+      <view class="section">
+        <textarea bindblur="bindTextAreaBlur"  placeholder="点击添加正文" />
+      </view>
+      <view>
+        <checkbox-group bindchange="checkboxChange">
+          <label class="checkbox">
+            <checkbox value="请授权你所上传的内容" checked=""/>请授权你所上传的内容
+          </label>
+        </checkbox-group>
+      </view>
+      <view class="su_center_shangchuang_btn" bindtap="formSubmit">我要上传</view>
+    </view>
+  </block>
+   <!--cc_zhong 分享层-->
+  <block wx:if='{{showshare == 1}}'>
+    <view class='fui-modal picker-modal {{slider}}'>
+      <view class='option-picker'>
+        <view class='option-picker-inner'>
+          <view class='option-picker-cell'>
+
+            <view class='fui-cell-group1'>
+              <view class='fui-cell'>
+                <button open-type='share' class='fui-cell-info' style="text-align:center;padding:10px;background:#ffffff;margin:0;border:0px solid #ffffff">
+                  <view class='icon'>
+                    <image src='/static/images/wechat.png' style="width:60px;height:60px" lazy-load='true'></image>
+                  </view>
+                  <view class='label'>分享给朋友</view>
+                </button>
+                <navigator class='fui-cell-info' style="text-align:center;padding:10px" url='/pages/goods/poster/index?id={{options.id}}'>
+                  <view class='icon icon-shop'>
+                    <image src='https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/gposter.png' style="width:60px;height:60px" lazy-load='true'></image>
+                  </view>
+                  <view class='label'>生成商品海报</view>
+                </navigator>
+              </view>
+            </view>
+          </view>
+
+          <view class='fui-navbar'>
+            <block>
+              <a href='javascript:;' bindtap='emptyActive' class='nav-item btn confirmbtn disabled' style="color:#666666">关 闭</a>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 选择图片或视频 -->
+  <block wx-if="{{showbtn}}">
+    <view class='hs_shangchuang'>
+      <button data-type='hs_video' bindtap='upload_video' >视频上传</button>
+      <button data-type='hs_img' bindtap='fileimg'>图片上传</button>
+    </view>
+  </block>
+</view>
+
+
+
+
+
+
+
+
+
+

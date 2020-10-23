@@ -1,0 +1,58 @@
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'> 
+  <view class="oy_form_image"><image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/1.png"></image></view>  
+  <view class="oy_form_list flex flex-ver flex-jcsb">
+      <view class="oy_form_title flex flex-ver">
+          <view>自由团长</view>
+      </view>
+      <view class="flex-1 oy_form_right flex flex-col">
+        <text class="oy_form_right_text">自由团长 实名验证</text>
+        <text  class="oy_form_right_bottom_text">免费申请，零零门槛，零投资，零压力</text>
+      </view>
+      <view  class="flex flex-ver oy_nav_box" bindtap="shitidian" data-shen="ziyou">
+          <view class="oy_nav_shenqing" >立即申请</view>
+          <image mode='aspectFill' src="../../img/oy_all@2x.png"></image>
+      </view>
+  </view>
+  <view class="oy_form_list flex flex-ver flex-jcsb">
+      <view class="oy_form_title flex flex-ver">
+          <view>实体团长</view>
+      </view>
+      <view class="flex-1 oy_form_right flex flex-col">
+        <text class="oy_form_right_text">实体店老板 实名验证</text>
+        <text  class="oy_form_right_bottom_text">免费申请，零零门槛，零投资，零压力</text>
+      </view>
+      <view  class="flex flex-ver oy_nav_box" bindtap="shitidian" data-shen="shitidian">
+          <view class="oy_nav_shenqing" >立即申请</view>
+          <image mode='aspectFill' src="../../img/oy_all@2x.png"></image>
+      </view>
+  </view>
+  <view class="oy_form_list flex flex-ver flex-jcsb">
+      <view class="oy_form_title flex flex-ver">
+          <view>运营中心</view>
+      </view>
+      <view class="flex-1 oy_form_right flex flex-col">
+        <text class="oy_form_right_text">实名验证</text>
+        <text  class="oy_form_right_bottom_text">只要一次购买700 VIP 消费卡</text>
+      </view>
+      <view  class="flex flex-ver oy_nav_box" bindtap="shitidian" data-shen="yunying" >
+          <view class="oy_nav_shenqing" >立即申请</view>
+          <image mode='aspectFill' src="../../img/oy_all@2x.png"></image>
+      </view>
+  </view>
+  <view class="oy_form_list flex flex-ver flex-jcsb">
+      <view class="oy_form_title flex flex-ver">
+          <view>分公司</view>
+      </view>
+      <view class="flex-1 oy_form_right flex flex-col">
+        <text class="oy_form_right_text">实名验证</text>
+        <text  class="oy_form_right_bottom_text">省代授权营销运营费须要支付70万</text>
+      </view>
+      <view  class="flex flex-ver oy_nav_box" bindtap="shitidian" data-shen="fengongsi">
+          <view class="oy_nav_shenqing" >立即申请</view>
+          <image mode='aspectFill' src="../../img/oy_all@2x.png"></image>
+      </view>
+  </view>
+</block>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我要分享",
+  "navigationBarBackgroundColor": "#FE0000",
+  "usingComponents": {
+    "poster": "/miniprogram_dist/poster/index"
+  }
+}

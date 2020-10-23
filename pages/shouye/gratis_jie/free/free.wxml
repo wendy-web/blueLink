@@ -1,0 +1,40 @@
+<!--pages/shouye/gratis_jie/free/free.wxml-->
+<view style="height:400rpx">
+  <image style="width:100%;height:100%" src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/beijing1.png"></image>
+</view>
+<view style="width:83%;margin:0 auto;border:2rpx solid red" class="p10">
+  <view style="color:red;overflow:hidden" class="font16">
+    <text class="fl">{{info.title}}</text>
+    <text class="fr">{{info.unit}}</text>
+  </view>
+  <view style="text-align:right;color:red;margin-top:10rpx">原价￥{{info.marketprice}}</view>
+</view> 
+
+
+<view class="" style="margin:300rpx 40rpx 0">
+  <!-- <view class="flex" style="background:#fff;flex:1;">
+    <view style="flex:2;align-items:center;" class="flex">
+      <view style="width:50rpx;height:50rpx">
+        <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/wechatPay.png" style="width:100%;height:100%"></image>
+      </view>
+      <text class="font16" style="margin-left:20rpx">微信支付</text>
+    </view>
+    <view style="flex:1;align-items:center;justify-content:flex-end" class="flex">
+      <checkbox-group bindchange="checkboxChange">
+        <checkbox value="" checked=""/>
+      </checkbox-group>
+    </view>
+  </view> -->
+  <view style="margin-top:20rpx;align-items:center;color:#888;" class="flex font14">
+    <view style="width:50rpx;height:50rpx">
+      <image style="height:100%;width:100%" src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/security.png"></image>
+    </view>
+    <text style="padding-left:20rpx">平台用户信息泄露风险由中国人保财险承保</text>
+  </view>
+</view>
+<view style="width:70%;margin:80rpx auto 0" class="flex flex-c flex-cloumn">
+  <!-- <text style="color:red">还差1单 就可以免单</text> -->
+  <view style="width:60%;height:80rpx;line-height:80rpx;border-radius:20rpx;background: linear-gradient(to top, rgb(254,121,2), rgb(254,254,0), rgb(254,121,2));text-align:center;font-weight:600;margin-top:10rpx" bindtap="goto">
+    立即免单
+  </view>
+</view>

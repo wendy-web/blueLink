@@ -1,0 +1,31 @@
+<view class="hb_center_bg" style="background-image:url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/hongbaoyue.png);height:{{scrHeight}}px;">
+    <view class="hb_center_yue ">
+      <view class="hb_center_num">{{member.total_price}}元</view>
+      <view class="hb_center_text">红包余额</view>
+    </view>
+    <view class="hb_center_hongbao flex flex-center flex-jcsb">
+      <view class="hb_center_item">
+        <view>{{member.credit1}}元</view>
+        <view >可用红包</view>
+        <navigator  url="/pages/member/mingxi/index?status=1" hover-class="navigator-hover" class="hb_center_padding" >明细查看</navigator>
+      </view>
+      <view class="hb_center_item">
+        <view>{{member.use_credit1}}元</view>
+        <view>已用红包</view>
+        <navigator url="/pages/member/mingxi/index?status=0" hover-class="navigator-hover" class="hb_center_padding" >明细查看</navigator>
+
+      </view>
+      <view class="hb_center_item">
+        <view>{{member.vip_credit1}}元</view>
+        <view>可用VIP红包</view>
+        <navigator url="/pages/member/mingxi/index?status=1&vip=1" hover-class="navigator-hover" class="hb_center_padding" >明细查看</navigator>
+
+      </view>
+      <view class="hb_center_item">
+        <view>{{member.use_vip_credit1}}元</view>
+        <view>已用VIP红包</view>
+        <navigator url="/pages/member/mingxi/index?status=0&vip=1" hover-class="navigator-hover" class="hb_center_padding" >明细查看</navigator>
+      </view>
+    </view>
+    <view class="hb_center_btn flex flex-center" bindtap="useRed">我要用红包</view>
+</view>

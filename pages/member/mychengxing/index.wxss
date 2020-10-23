@@ -1,0 +1,7 @@
+.oy_center_image{
+  width: 100%;
+  height: 100%;
+}
+.oy_center_image>image{
+    width: 100%;
+}

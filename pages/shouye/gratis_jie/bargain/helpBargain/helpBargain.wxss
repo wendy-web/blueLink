@@ -1,0 +1,84 @@
+/* pages/shouye/gratis_jie/bargain/helpBargain/helpBargain.wxss */
+page{
+  background: #FE0000;
+}
+.w100{
+  width: 100%;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.flex{
+  display: flex;
+}
+.flex-cloumn{
+  flex-direction: column;
+}
+.flex-c{
+  justify-content: center;
+  align-items: center;
+}
+.text-c{
+  text-align: center
+}
+.p10{
+  padding: 20rpx;
+}
+.bg_red{
+  background: red;
+}
+.bg_pick{
+  background: rgb(255,144,143);
+}
+.textOver{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.font14{
+  font-size: 28rpx;
+}
+.font16{
+  font-size: 32rpx;
+}
+.font18{
+  font-size: 36rpx;
+}
+.font20{
+  font-size: 40rpx;
+}
+.font22{
+  font-size: 44rpx;
+}
+.font30{
+  font-size: 60rpx;
+}
+.tck{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: rgba(0,0,0,.6);
+}
+
+
+.kanBg{
+  margin:30rpx auto;
+  padding: 10rpx 80rpx;
+  color: #333;
+  background: rgba(254, 165, 0);
+  border-radius: 10rpx;
+  /* background: linear-gradient(top,#000 0%,blue 20%,#000 80%); */
+}
+.btnBTK{
+  padding: 10rpx 80rpx;
+  color: #333;
+  background: linear-gradient(rgb(255,141,1) ,rgb(254,244,0) ,rgb(255,141,1));
+  float: left;
+  border-radius: 30rpx;
+}

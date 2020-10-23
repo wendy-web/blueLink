@@ -1,0 +1,204 @@
+page{
+  background-color: #eff1f6;
+  word-break: break-all;
+	font-size:28rpx;
+}
+.page{
+    background-color: #ffffff;
+}
+.su_container{
+  width: 100%;
+
+}
+.su_tab{
+  margin: 20rpx auto;
+}
+.su_tab>.item{
+  border: 2rpx solid #F00001;
+  padding: 10rpx 10rpx;
+  box-sizing: border-box;
+  margin-right: 10rpx;
+  font-size: 24rpx;
+}
+.su_tab>.item:first-child{
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+}
+.su_tab>.item:last-child{
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}
+
+.su_center{
+  width: 70%;
+  margin: 20rpx auto;
+}
+
+.section{
+  height: 200rpx;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.section textarea{
+  border: 2rpx solid #eee;
+  height: 200rpx;
+  width: 100%;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+
+.active{
+  background: #F00001;
+  color: #FFFC11;
+}
+
+.su_tow_btn{
+  margin-top: 20rpx;
+}
+
+.su_login{
+  border: 2rpx solid #eee;
+  width: 200rpx;
+  text-align: center;
+  margin-right: 10rpx;
+
+}
+.su_reginer{
+   border: 2rpx solid #eee;
+    width: 200rpx;
+    text-align: center;
+}
+
+.active_on{
+  background: #FF808B;
+}
+.su_top_image{
+  width: 100%;
+}
+.su_top_image>image{
+  width: 100%;
+  height: 350rpx;
+}
+.su_center_image{
+  width: 100%;
+  position: relative;
+
+  
+}
+.su_center_image>image{
+  height: 325rpx;
+  width: 100%;
+}
+.su_center_text{
+  position: absolute;
+  top: 30rpx;
+  align-items: center;
+}
+.su_center_top{
+  font-size: 40rpx;
+  text-align: center;
+  color: #FFFF00;
+}
+.su_center_bottom{
+  font-size: 50rpx;
+  color: #FFFF00;
+}
+
+/* 水果爆款--- */
+.fruits_box{
+  width: 100%;
+  box-sizing: border-box;
+  padding:  20rpx;
+  font-size: 24rpx;
+}
+.fruits_tile{
+  width: 100%;
+  height: 120rpx;
+  text-align: center;
+  font-size: 30rpx;
+  background-size: 100% 100%;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+
+}
+.fruits_li{
+  width: 49%;
+  margin-bottom: 20rpx;
+}
+.fruits_li .fruits_img{
+  width: 100%;
+  height: 200rpx;
+  margin-bottom: 20rpx;
+}
+.btn_box {
+  /* margin-top: 20rpx; */
+}
+.btn_box button{
+  font-size: 20rpx;
+  padding: 0rpx 15rpx;
+  background: red;
+  color: #fff;
+  border: none;
+  margin-top: 10rpx;
+  white-space: nowrap;
+}
+.font_siz40{
+  font-size: 30rpx;
+  color: #FE0000;
+  white-space: nowrap;
+}
+.through{
+  text-decoration: line-through;
+  font-size: 20rpx;
+  color: #000;
+  /* color: #000; */
+}
+
+.font_siz16{
+  font-size: 16rpx;
+}
+.su_center_red>text{
+  margin-bottom: 17rpx;
+}
+
+.shucai{
+  width: 100%;
+  height: 200rpx;
+}
+
+.su_center_qianggao{
+  background: #FBFF48;
+  padding: 10rpx 10rpx;
+  box-sizing: border-box;
+}
+
+.su_max{
+  font-size: 50rpx;
+  margin-bottom: 15rpx;
+}
+.su_min{
+  font-size: 24rpx;
+}
+.su_qianggou{
+  border: 2rpx solid #000;
+  font-size: 34rpx;
+  text-align: center;
+}
+.su_text{
+  white-space: nowrap;
+}
+.til_box{
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+}
+.til_box text{
+  font-size: 20rpx;
+  text-align: center;
+}
+.til_box>text:nth-child(1){
+  font-size: 30rpx;
+}
+.service{
+  text-align: center;
+}
+

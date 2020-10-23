@@ -1,0 +1,40 @@
+<view class="su_container page">
+  <view class="su_top_image"><image src="{{hostUrl + 'index/iconLive.png'}}"></image> </view>
+  <view class="su_tab flex flex-wrap flex-center flex-ver ">
+    <block wx:for="{{ccates}}" wx:item="{{item}}" wx:key="ccates" data-index="{{index}}">
+        <view bindtap='myTab' class='item {{active == index ? "active" : ""}}' data-cate='{{item.id}}' data-type="{{index}}">{{item.name}}</view>
+    </block> 
+  </view>
+
+    <view class="su_center_image flex flex-center">
+      <image src="{{broadImg}}"></image>
+    </view>
+    <!-- 季节热销产品 --> 
+    <view class="fruits_tile" style="background-image:url(https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/pintuan12.png);"></view>
+    <view class="fruits_box flex flex-jcsb flex-wrap">
+      <block wx:for="{{goods}}" wx:item="{{item}}" wx:key="goods"> 
+        <view class="fruits_li"> 
+        <navigator url="/pages/goods/detail/index?id={{item.id}}" hover-class="none">
+          <image class="fruits_img" src="{{item.thumb}}"></image>
+          <view class="flex flex-jcsb flex-center">
+            <view class="su_center_red flex flex-col bagr_red flex-jcsb">
+              <text>{{item.title}}</text>
+              <text wx:if="{{item.isdeduct==1}}">可抵扣红包/VIP卡</text>
+              <text class="font_siz40">￥{{item.productprice}}<text class="through">市场价：{{item.marketprice}}</text></text>
+            </view>
+            <view class="btn_box flex flex-col flex-center">
+              <text>{{item.unit}}</text>
+              <button>点击购买</button>
+              <!-- <button>分享赚钱</button> -->
+            </view>
+          </view>
+        </navigator>
+        </view>
+      </block>
+    </view>
+  <view class="til_box flex flex-col">
+    <text>团优优.健康消费平台</text>
+    <text>我们承诺：如果您购买的水果出现坏果烂果，平台根据情况进行退款换果</text>
+    <view class="service"><text>我们客服热线：020-888888888</text><text>微信客服：13333333</text></view>
+  </view>
+</view>

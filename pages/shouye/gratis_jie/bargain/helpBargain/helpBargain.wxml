@@ -1,0 +1,53 @@
+<!--pages/shouye/gratis_jie/bargain/helpBargain/helpBargain.wxml-->
+<import src="/utils/wxParse/wxParse.wxml" />
+<view class="w100">
+  <view class="" style="height:500rpx;border:2rpx solid rgb(255,144,143);margin:0 20rpx;border-bottom:none">
+    <image style="width:100%;height:100%" src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/bg_kan.png"></image>
+  </view>
+  <view class="bg_pick p10 flex" style="margin: 0 20rpx">
+    <view style="width:180rpx;height:160rpx">
+      <image style="width:100%;height:100%" src="{{info.res2.images}}"></image>
+    </view>
+    <view class="font14" style="color:#fff;text-align:right;flex:1">
+      <view class="font20">原价￥{{info.res2.start_price}}</view>
+      <view>{{info.res2.title}}</view>
+      <view>每人只能砍一次</view>
+    </view>
+  </view>
+  <view style="justify-content: space-between" class="p10 flex">
+    <view class="btnBTK" bindtap="help">帮他砍</view>
+    <view class="btnBTK" bindtap="self">我自己开</view>
+  </view>
+  <view class="" style="height:200rpx;border:2rpx solid rgb(255,144,143);margin:0 20rpx;border-bottom:none;padding-bottom:20rpx">
+    <image style="width:100%;height:100%" src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/kan0.png"></image>
+  </view>
+  <view class="bg_pick p10" style="margin: 0 20rpx;color:#fff">
+    <view>活动说明</view>
+    <template is='wxParse' data='{{ wxParseData:wxParseData.nodes }}' />
+  </view>
+
+  <!-- <view class="p10" style="border-top:4rpx solid rgb(255,144,143);margin-top:40rpx;color:#fff;margin-bottom:40rpx;">
+    <view style="overflow:hidden">
+      <text class="fl">砍价记录</text>
+      <text class="fr font14">已砍{{info.res.bargain_times}}次 / 剩余{{info.res.remain_num}}次</text>
+    </view>
+    <view class="bg_pick" style="margin-top:20rpx">
+      <view class="p10 flex" wx:for="{{info.res3}}" wx:key="{{index}}">
+        <view style="width:60rpx;height:60rpx;background:#ccc;border-radius:100%"><image src="{{item.head_image}}" style="width:100%;height:100%;border-radius:100%"></image></view>
+        <view style="flex:1; margin:0 20rpx; " class="flex flex-c">
+          <view style="width:100%;height:2rpx;border-top:2rpx dashed #fff"></view>
+        </view>
+        <text>￥{{item.bargain_price}}</text>
+      </view>
+    </view>
+  </view> -->
+
+
+  <view wx:if="{{show}}" class="tck flex flex-cloumn flex-c">
+    <view style="width:600rpx;height:600rpx">
+      <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/bargain10.png" style="width:100%;height:100%"></image>
+    </view>
+    <image bindtap="close" src="/static/images/icon/close_light.png" style="width:60rpx;height:60rpx;border:2rpx solid #707070;margin-top:20rpx"></image>
+  </view>
+
+</view>

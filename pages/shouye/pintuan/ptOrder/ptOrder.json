@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "拼团订单",
+  "navigationBarBackgroundColor": "#FE0000",
+  "usingComponents": {
+    "Address": "/component/Address/Address",
+    "ShopOrder":"/component/ShopOrder/ShopOrder",
+    "Remarks":"/component/Remarks/Remarks",
+    "MoneyInfo":"/component/MoneyInfo/MoneyInfo"
+  }
+}

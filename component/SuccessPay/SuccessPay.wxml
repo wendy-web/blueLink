@@ -1,0 +1,8 @@
+<!--component/SuccessPay/SuccessPay.wxml-->
+<view class="flex flex-c flex-cloumn font16" style="color:red;padding-top:40rpx">
+  <view style="width:120rpx;height:120rpx">
+    <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/paySuccess.png" style="width:100%;height:100%"></image>
+  </view>
+  <view class="font14" style="margin: 10rpx 0">订单支付成功</view>
+  <view class="font22">￥{{price}}</view>
+</view>

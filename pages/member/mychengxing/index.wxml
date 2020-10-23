@@ -1,0 +1,3 @@
+<view class="oy_center_image">
+  <image src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/chengxinIP.png" style="height:{{scrHeight}}px;"></image>
+</view>

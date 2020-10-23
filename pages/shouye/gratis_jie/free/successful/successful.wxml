@@ -1,0 +1,49 @@
+<!--pages/shouye/gratis_jie/free/successful/successful.wxml-->
+<import src="/utils/wxParse/wxParse.wxml" />
+<view class="w100">
+  <view class="" style="height:500rpx;border:2rpx solid rgb(255,144,143);margin:0 20rpx;border-bottom:none">
+    <image style="width:100%;height:100%" src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/bg_kan0.png"></image>
+  </view>
+  <view class="bg_pick p10 flex" style="margin: 0 20rpx">
+    <view style="width:180rpx;height:160rpx">
+      <image style="width:100%;height:100%" src="{{info.detail.thumb}}"></image>
+    </view>
+    <view class="font14" style="color:#fff;text-align:right;flex:1">
+      <view class="font20">原价￥{{info.detail.price}}</view>
+      <view>{{info.detail.title}}</view>
+      <view>每人只能砍一次</view>
+    </view>
+  </view>
+  <view class="p10 flex flex-c flex-cloumn">
+    <text wx:if="{{status == 1}}" class="kanBg" bindtap="freeSheet">我要免单领取</text>
+    <text wx:else class="kanBg" bindtap="">已领取</text>
+    <!-- <text>加油！还差2次砍价</text> -->
+  </view>
+  <view class="" style="height:200rpx;border:2rpx solid rgb(255,144,143);margin:0 20rpx;border-bottom:none;padding-bottom:20rpx">
+    <image style="width:100%;height:100%" src="https://tuanyouyou.cn/addons/wx_shop/plugin/app/static/material/kan0.png"></image>
+  </view>
+  <view class="bg_pick p10" style="margin: 0 20rpx;color:#fff">
+    <view>活动说明</view>
+    <template is='wxParse' data='{{ wxParseData:wxParseData.nodes }}' />
+    <!-- <view class="font14">1、搞不动不敢看个</view>
+    <view class="font14">2、搞不动不敢看个</view>
+    <view class="font14">3、搞不动不敢看个</view> -->
+  </view>
+
+  <!-- <view class="p10" style="border-top:4rpx solid rgb(255,144,143);margin-top:40rpx;color:#fff;margin-bottom:40rpx;">
+    <view style="overflow:hidden">
+      <text class="fl">砍价记录</text>
+      <text class="fr font14">已砍5次 / 剩余2次</text>
+    </view>
+    <view class="bg_pick" style="margin-top:20rpx">
+      <view class="p10 flex" wx:for="{{5}}" wx:key="{{index}}">
+        <view style="width:60rpx;height:60rpx;background:#ccc;border-radius:100%"><image src="" style="width:100%;height:100%"></image></view>
+        <view style="flex:1; margin:0 20rpx; " class="flex flex-c">
+          <view style="width:100%;height:2rpx;border-top:2rpx dashed #fff"></view>
+        </view>
+        <text>￥1.00</text>
+      </view>
+    </view>
+  </view> -->
+
+</view>

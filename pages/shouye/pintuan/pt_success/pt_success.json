@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "拼团成功",
+  "navigationBarBackgroundColor": "#FE0000",
+  "usingComponents": {
+    "Record": "/component/Record/Record",
+    "PayNav": "/component/PayNav/PayNav"
+  }
+}

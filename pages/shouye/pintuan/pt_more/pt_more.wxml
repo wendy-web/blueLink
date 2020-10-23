@@ -1,0 +1,20 @@
+<!--pages/shouye/pintuan/pt_more/pt_more.wxml-->
+<!-- <text>pages/shouye/pintuan/pt_more/pt_more.wxml</text> -->
+
+<!-- <scroll-view> -->
+  <view class="flex p10" wx:for="{{team_ing}}" wx:key="{{index}}">
+    <view class="flex" style="flex:1;align-items:center">
+      <view style="width:80rpx;height:80rpx;">
+        <image src="{{item.avatar}}" style="width:100%;height:100%"></image>
+      </view>
+      <view style="color:#888;margin-left:10rpx;width:120rpx;margin-right:20rpx" class="font14 fontWarp">{{item.nickname}}</view>
+    </view>
+    <view style="width:80%" class="font14 flex flex-jcfe">
+      <view >
+        <view>还差<text>{{item.groups_team}}人</text>拼成</view>
+        <view style="color:#888">剩余：{{item.timeLeft}}</view>
+      </view>
+      <view data-teamid="{{item.teamid}}" bindtap="join" class="font16 bg_red flex flex-c" style="color:#fff;border-radius:16rpx;padding:16rpx;margin-left:20rpx">去拼团</view>
+    </view>
+  </view>
+<!-- </scroll-view> -->

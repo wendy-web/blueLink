@@ -1,0 +1,13 @@
+<!--component/Record/Record.wxml-->
+<!-- 记录列表 -->
+<view style="font-size:32rpx;color:#888;padding:10rpx 0 0 20rpx">
+  购买记录
+</view>
+<view style="margin-bottom:120rpx">
+  <view wx:for="{{list}}" wx:key="{{index}}" style="padding:20rpx;font-size:28rpx;color:#333" class="flex">
+    <image src="{{item.avatar || '/static/images/noface.png'}}" style="width:80rpx;height:80rpx;border-radius:100%;background:#eee"></image>
+    <text class="flex flex-c" style="flex:1">{{item.nickname || ''}}</text>
+    <text class="flex flex-c" style="flex:1">1份</text>
+    <text class="flex flex-c" style="flex:2">{{item.starttime || ''}}</text>
+  </view>
+</view>

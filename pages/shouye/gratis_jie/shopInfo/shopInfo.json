@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "navigationBarBackgroundColor": "#FE0000",
+  "usingComponents": {
+    "Record" : "/component/Record/Record"
+  }
+}

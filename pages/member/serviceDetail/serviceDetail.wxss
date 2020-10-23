@@ -1,0 +1,9 @@
+.wrapperText{
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
+.content{
+ padding: 10rpx;
+ font-size: 30rpx;
+}
